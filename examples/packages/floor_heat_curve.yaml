@@ -338,6 +338,8 @@ template:
   - trigger:
       - trigger: homeassistant
         event: start
+      - trigger: time_pattern
+        minutes: "/5"
       - trigger: state
         entity_id:
           - sensor.lumi_cn_lumi_158d00041f4592_v1_temperature_p_2_1
@@ -674,10 +676,18 @@ template:
             idle
           {% endif %}
     binary_sensor:
+      - name: floor_heat_zhu_wo_sensor_stale
+        unique_id: floor_heat_zhu_wo_sensor_stale
+        state: >
+          {% set obj = states.sensor.lumi_cn_lumi_158d00041f4592_v1_temperature_p_2_1 %}
+          {% set age = as_timestamp(now()) - as_timestamp(obj.last_updated, default=0) %}
+          {{ obj is none or obj.state in ['unknown', 'unavailable', 'none', ''] or age > 10800 }}
       - name: floor_heat_zhu_wo_sensor_valid
         unique_id: floor_heat_zhu_wo_sensor_valid
         state: >
-          {{ states('sensor.lumi_cn_lumi_158d00041f4592_v1_temperature_p_2_1') not in ['unknown', 'unavailable', 'none', ''] }}
+          {% set obj = states.sensor.lumi_cn_lumi_158d00041f4592_v1_temperature_p_2_1 %}
+          {% set age = as_timestamp(now()) - as_timestamp(obj.last_updated, default=0) %}
+          {{ obj is not none and obj.state not in ['unknown', 'unavailable', 'none', ''] and age <= 18000 }}
       - name: floor_heat_zhu_wo_valve_available
         unique_id: floor_heat_zhu_wo_valve_available
         state: >
@@ -695,10 +705,18 @@ template:
              and is_state('binary_sensor.floor_heat_zhu_wo_valve_available', 'on')
              and current <= (target - start_delta)
              and predicted < (target - stop_margin) }}
+      - name: floor_heat_er_tong_fang_sensor_stale
+        unique_id: floor_heat_er_tong_fang_sensor_stale
+        state: >
+          {% set obj = states.sensor.lumi_cn_lumi_158d000406b1e1_v1_temperature_p_2_1 %}
+          {% set age = as_timestamp(now()) - as_timestamp(obj.last_updated, default=0) %}
+          {{ obj is none or obj.state in ['unknown', 'unavailable', 'none', ''] or age > 10800 }}
       - name: floor_heat_er_tong_fang_sensor_valid
         unique_id: floor_heat_er_tong_fang_sensor_valid
         state: >
-          {{ states('sensor.lumi_cn_lumi_158d000406b1e1_v1_temperature_p_2_1') not in ['unknown', 'unavailable', 'none', ''] }}
+          {% set obj = states.sensor.lumi_cn_lumi_158d000406b1e1_v1_temperature_p_2_1 %}
+          {% set age = as_timestamp(now()) - as_timestamp(obj.last_updated, default=0) %}
+          {{ obj is not none and obj.state not in ['unknown', 'unavailable', 'none', ''] and age <= 18000 }}
       - name: floor_heat_er_tong_fang_valve_available
         unique_id: floor_heat_er_tong_fang_valve_available
         state: >
@@ -716,10 +734,18 @@ template:
              and is_state('binary_sensor.floor_heat_er_tong_fang_valve_available', 'on')
              and current <= (target - start_delta)
              and predicted < (target - stop_margin) }}
+      - name: floor_heat_lao_ren_fang_sensor_stale
+        unique_id: floor_heat_lao_ren_fang_sensor_stale
+        state: >
+          {% set obj = states.sensor.lumi_cn_lumi_158d00044c0213_v1_temperature_p_2_1 %}
+          {% set age = as_timestamp(now()) - as_timestamp(obj.last_updated, default=0) %}
+          {{ obj is none or obj.state in ['unknown', 'unavailable', 'none', ''] or age > 10800 }}
       - name: floor_heat_lao_ren_fang_sensor_valid
         unique_id: floor_heat_lao_ren_fang_sensor_valid
         state: >
-          {{ states('sensor.lumi_cn_lumi_158d00044c0213_v1_temperature_p_2_1') not in ['unknown', 'unavailable', 'none', ''] }}
+          {% set obj = states.sensor.lumi_cn_lumi_158d00044c0213_v1_temperature_p_2_1 %}
+          {% set age = as_timestamp(now()) - as_timestamp(obj.last_updated, default=0) %}
+          {{ obj is not none and obj.state not in ['unknown', 'unavailable', 'none', ''] and age <= 18000 }}
       - name: floor_heat_lao_ren_fang_valve_available
         unique_id: floor_heat_lao_ren_fang_valve_available
         state: >
@@ -737,10 +763,18 @@ template:
              and is_state('binary_sensor.floor_heat_lao_ren_fang_valve_available', 'on')
              and current <= (target - start_delta)
              and predicted < (target - stop_margin) }}
+      - name: floor_heat_shu_fang_sensor_stale
+        unique_id: floor_heat_shu_fang_sensor_stale
+        state: >
+          {% set obj = states.sensor.lumi_cn_lumi_158d00044bc2eb_v1_temperature_p_2_1 %}
+          {% set age = as_timestamp(now()) - as_timestamp(obj.last_updated, default=0) %}
+          {{ obj is none or obj.state in ['unknown', 'unavailable', 'none', ''] or age > 10800 }}
       - name: floor_heat_shu_fang_sensor_valid
         unique_id: floor_heat_shu_fang_sensor_valid
         state: >
-          {{ states('sensor.lumi_cn_lumi_158d00044bc2eb_v1_temperature_p_2_1') not in ['unknown', 'unavailable', 'none', ''] }}
+          {% set obj = states.sensor.lumi_cn_lumi_158d00044bc2eb_v1_temperature_p_2_1 %}
+          {% set age = as_timestamp(now()) - as_timestamp(obj.last_updated, default=0) %}
+          {{ obj is not none and obj.state not in ['unknown', 'unavailable', 'none', ''] and age <= 18000 }}
       - name: floor_heat_shu_fang_valve_available
         unique_id: floor_heat_shu_fang_valve_available
         state: >
@@ -758,10 +792,18 @@ template:
              and is_state('binary_sensor.floor_heat_shu_fang_valve_available', 'on')
              and current <= (target - start_delta)
              and predicted < (target - stop_margin) }}
+      - name: floor_heat_can_ting_sensor_stale
+        unique_id: floor_heat_can_ting_sensor_stale
+        state: >
+          {% set obj = states.sensor.lumi_cn_lumi_158d00041e2f7c_v1_temperature_p_2_1 %}
+          {% set age = as_timestamp(now()) - as_timestamp(obj.last_updated, default=0) %}
+          {{ obj is none or obj.state in ['unknown', 'unavailable', 'none', ''] or age > 10800 }}
       - name: floor_heat_can_ting_sensor_valid
         unique_id: floor_heat_can_ting_sensor_valid
         state: >
-          {{ states('sensor.lumi_cn_lumi_158d00041e2f7c_v1_temperature_p_2_1') not in ['unknown', 'unavailable', 'none', ''] }}
+          {% set obj = states.sensor.lumi_cn_lumi_158d00041e2f7c_v1_temperature_p_2_1 %}
+          {% set age = as_timestamp(now()) - as_timestamp(obj.last_updated, default=0) %}
+          {{ obj is not none and obj.state not in ['unknown', 'unavailable', 'none', ''] and age <= 18000 }}
       - name: floor_heat_can_ting_valve_available
         unique_id: floor_heat_can_ting_valve_available
         state: >
@@ -779,10 +821,18 @@ template:
              and is_state('binary_sensor.floor_heat_can_ting_valve_available', 'on')
              and current <= (target - start_delta)
              and predicted < (target - stop_margin) }}
+      - name: floor_heat_qi_ju_shi_sensor_stale
+        unique_id: floor_heat_qi_ju_shi_sensor_stale
+        state: >
+          {% set obj = states.sensor.lumi_cn_lumi_158d0003cd3c36_v1_temperature_p_2_1 %}
+          {% set age = as_timestamp(now()) - as_timestamp(obj.last_updated, default=0) %}
+          {{ obj is none or obj.state in ['unknown', 'unavailable', 'none', ''] or age > 10800 }}
       - name: floor_heat_qi_ju_shi_sensor_valid
         unique_id: floor_heat_qi_ju_shi_sensor_valid
         state: >
-          {{ states('sensor.lumi_cn_lumi_158d0003cd3c36_v1_temperature_p_2_1') not in ['unknown', 'unavailable', 'none', ''] }}
+          {% set obj = states.sensor.lumi_cn_lumi_158d0003cd3c36_v1_temperature_p_2_1 %}
+          {% set age = as_timestamp(now()) - as_timestamp(obj.last_updated, default=0) %}
+          {{ obj is not none and obj.state not in ['unknown', 'unavailable', 'none', ''] and age <= 18000 }}
       - name: floor_heat_qi_ju_shi_valve_available
         unique_id: floor_heat_qi_ju_shi_valve_available
         state: >
@@ -800,10 +850,18 @@ template:
              and is_state('binary_sensor.floor_heat_qi_ju_shi_valve_available', 'on')
              and current <= (target - start_delta)
              and predicted < (target - stop_margin) }}
+      - name: floor_heat_da_ting_sensor_stale
+        unique_id: floor_heat_da_ting_sensor_stale
+        state: >
+          {% set obj = states.sensor.lumi_cn_lumi_158d0003cd3c41_v1_temperature_p_2_1 %}
+          {% set age = as_timestamp(now()) - as_timestamp(obj.last_updated, default=0) %}
+          {{ obj is none or obj.state in ['unknown', 'unavailable', 'none', ''] or age > 10800 }}
       - name: floor_heat_da_ting_sensor_valid
         unique_id: floor_heat_da_ting_sensor_valid
         state: >
-          {{ states('sensor.lumi_cn_lumi_158d0003cd3c41_v1_temperature_p_2_1') not in ['unknown', 'unavailable', 'none', ''] }}
+          {% set obj = states.sensor.lumi_cn_lumi_158d0003cd3c41_v1_temperature_p_2_1 %}
+          {% set age = as_timestamp(now()) - as_timestamp(obj.last_updated, default=0) %}
+          {{ obj is not none and obj.state not in ['unknown', 'unavailable', 'none', ''] and age <= 18000 }}
       - name: floor_heat_da_ting_valve_available
         unique_id: floor_heat_da_ting_valve_available
         state: >
@@ -821,10 +879,18 @@ template:
              and is_state('binary_sensor.floor_heat_da_ting_valve_available', 'on')
              and current <= (target - start_delta)
              and predicted < (target - stop_margin) }}
+      - name: floor_heat_wan_ju_fang_sensor_stale
+        unique_id: floor_heat_wan_ju_fang_sensor_stale
+        state: >
+          {% set obj = states.sensor.lumi_cn_lumi_158d0002b96514_v1_temperature_p_2_1 %}
+          {% set age = as_timestamp(now()) - as_timestamp(obj.last_updated, default=0) %}
+          {{ obj is none or obj.state in ['unknown', 'unavailable', 'none', ''] or age > 10800 }}
       - name: floor_heat_wan_ju_fang_sensor_valid
         unique_id: floor_heat_wan_ju_fang_sensor_valid
         state: >
-          {{ states('sensor.lumi_cn_lumi_158d0002b96514_v1_temperature_p_2_1') not in ['unknown', 'unavailable', 'none', ''] }}
+          {% set obj = states.sensor.lumi_cn_lumi_158d0002b96514_v1_temperature_p_2_1 %}
+          {% set age = as_timestamp(now()) - as_timestamp(obj.last_updated, default=0) %}
+          {{ obj is not none and obj.state not in ['unknown', 'unavailable', 'none', ''] and age <= 18000 }}
       - name: floor_heat_wan_ju_fang_valve_available
         unique_id: floor_heat_wan_ju_fang_valve_available
         state: >
