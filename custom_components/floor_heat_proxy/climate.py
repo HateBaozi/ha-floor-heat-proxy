@@ -149,11 +149,18 @@ class FloorHeatProxyClimate(ClimateEntity):
     @property
     def extra_state_attributes(self) -> dict[str, Any]:
         """Return extra state attributes for observability."""
+        valve_available = self._state(self._valve_switch_entity) not in {
+            STATE_UNKNOWN,
+            STATE_UNAVAILABLE,
+            "",
+        }
         return {
             "predicted_temperature": self._float_state(self._predicted_temperature_entity),
             "heat_demand": self._state(self._heat_demand_entity),
             "sensor_valid": self._state(self._sensor_valid_entity),
             "valve_state": self._state(self._valve_switch_entity),
+            "valve_available": valve_available,
+            "control_ready": valve_available and self._state(self._sensor_valid_entity) == "on",
             "temperature_sensor_entity": self._temperature_sensor,
             "target_temperature_entity": self._target_temperature_entity,
             "enabled_entity": self._enabled_entity,

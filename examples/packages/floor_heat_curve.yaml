@@ -678,6 +678,10 @@ template:
         unique_id: floor_heat_zhu_wo_sensor_valid
         state: >
           {{ states('sensor.lumi_cn_lumi_158d00041f4592_v1_temperature_p_2_1') not in ['unknown', 'unavailable', 'none', ''] }}
+      - name: floor_heat_zhu_wo_valve_available
+        unique_id: floor_heat_zhu_wo_valve_available
+        state: >
+          {{ states('switch.yeelink_cn_358374474_sw1_on_p_3_1') not in ['unknown', 'unavailable', 'none', ''] }}
       - name: floor_heat_zhu_wo_heat_demand
         unique_id: floor_heat_zhu_wo_heat_demand
         state: >
@@ -688,12 +692,17 @@ template:
           {% set predicted = states('sensor.floor_heat_zhu_wo_predicted_temp') | float(0) %}
           {{ is_state('input_boolean.floor_heat_zhu_wo_enabled', 'on')
              and is_state('binary_sensor.floor_heat_zhu_wo_sensor_valid', 'on')
+             and is_state('binary_sensor.floor_heat_zhu_wo_valve_available', 'on')
              and current <= (target - start_delta)
              and predicted < (target - stop_margin) }}
       - name: floor_heat_er_tong_fang_sensor_valid
         unique_id: floor_heat_er_tong_fang_sensor_valid
         state: >
           {{ states('sensor.lumi_cn_lumi_158d000406b1e1_v1_temperature_p_2_1') not in ['unknown', 'unavailable', 'none', ''] }}
+      - name: floor_heat_er_tong_fang_valve_available
+        unique_id: floor_heat_er_tong_fang_valve_available
+        state: >
+          {{ states('switch.yeelink_cn_358374550_sw1_on_p_2_1') not in ['unknown', 'unavailable', 'none', ''] }}
       - name: floor_heat_er_tong_fang_heat_demand
         unique_id: floor_heat_er_tong_fang_heat_demand
         state: >
@@ -704,12 +713,17 @@ template:
           {% set predicted = states('sensor.floor_heat_er_tong_fang_predicted_temp') | float(0) %}
           {{ is_state('input_boolean.floor_heat_er_tong_fang_enabled', 'on')
              and is_state('binary_sensor.floor_heat_er_tong_fang_sensor_valid', 'on')
+             and is_state('binary_sensor.floor_heat_er_tong_fang_valve_available', 'on')
              and current <= (target - start_delta)
              and predicted < (target - stop_margin) }}
       - name: floor_heat_lao_ren_fang_sensor_valid
         unique_id: floor_heat_lao_ren_fang_sensor_valid
         state: >
           {{ states('sensor.lumi_cn_lumi_158d00044c0213_v1_temperature_p_2_1') not in ['unknown', 'unavailable', 'none', ''] }}
+      - name: floor_heat_lao_ren_fang_valve_available
+        unique_id: floor_heat_lao_ren_fang_valve_available
+        state: >
+          {{ states('switch.yeelink_cn_358373839_sw1_on_p_3_1') not in ['unknown', 'unavailable', 'none', ''] }}
       - name: floor_heat_lao_ren_fang_heat_demand
         unique_id: floor_heat_lao_ren_fang_heat_demand
         state: >
@@ -720,12 +734,17 @@ template:
           {% set predicted = states('sensor.floor_heat_lao_ren_fang_predicted_temp') | float(0) %}
           {{ is_state('input_boolean.floor_heat_lao_ren_fang_enabled', 'on')
              and is_state('binary_sensor.floor_heat_lao_ren_fang_sensor_valid', 'on')
+             and is_state('binary_sensor.floor_heat_lao_ren_fang_valve_available', 'on')
              and current <= (target - start_delta)
              and predicted < (target - stop_margin) }}
       - name: floor_heat_shu_fang_sensor_valid
         unique_id: floor_heat_shu_fang_sensor_valid
         state: >
           {{ states('sensor.lumi_cn_lumi_158d00044bc2eb_v1_temperature_p_2_1') not in ['unknown', 'unavailable', 'none', ''] }}
+      - name: floor_heat_shu_fang_valve_available
+        unique_id: floor_heat_shu_fang_valve_available
+        state: >
+          {{ states('switch.yeelink_cn_404920863_sw1_on_p_2_1') not in ['unknown', 'unavailable', 'none', ''] }}
       - name: floor_heat_shu_fang_heat_demand
         unique_id: floor_heat_shu_fang_heat_demand
         state: >
@@ -736,12 +755,17 @@ template:
           {% set predicted = states('sensor.floor_heat_shu_fang_predicted_temp') | float(0) %}
           {{ is_state('input_boolean.floor_heat_shu_fang_enabled', 'on')
              and is_state('binary_sensor.floor_heat_shu_fang_sensor_valid', 'on')
+             and is_state('binary_sensor.floor_heat_shu_fang_valve_available', 'on')
              and current <= (target - start_delta)
              and predicted < (target - stop_margin) }}
       - name: floor_heat_can_ting_sensor_valid
         unique_id: floor_heat_can_ting_sensor_valid
         state: >
           {{ states('sensor.lumi_cn_lumi_158d00041e2f7c_v1_temperature_p_2_1') not in ['unknown', 'unavailable', 'none', ''] }}
+      - name: floor_heat_can_ting_valve_available
+        unique_id: floor_heat_can_ting_valve_available
+        state: >
+          {{ states('switch.yeelink_cn_404920863_sw1_on_p_3_1') not in ['unknown', 'unavailable', 'none', ''] }}
       - name: floor_heat_can_ting_heat_demand
         unique_id: floor_heat_can_ting_heat_demand
         state: >
@@ -752,12 +776,17 @@ template:
           {% set predicted = states('sensor.floor_heat_can_ting_predicted_temp') | float(0) %}
           {{ is_state('input_boolean.floor_heat_can_ting_enabled', 'on')
              and is_state('binary_sensor.floor_heat_can_ting_sensor_valid', 'on')
+             and is_state('binary_sensor.floor_heat_can_ting_valve_available', 'on')
              and current <= (target - start_delta)
              and predicted < (target - stop_margin) }}
       - name: floor_heat_qi_ju_shi_sensor_valid
         unique_id: floor_heat_qi_ju_shi_sensor_valid
         state: >
           {{ states('sensor.lumi_cn_lumi_158d0003cd3c36_v1_temperature_p_2_1') not in ['unknown', 'unavailable', 'none', ''] }}
+      - name: floor_heat_qi_ju_shi_valve_available
+        unique_id: floor_heat_qi_ju_shi_valve_available
+        state: >
+          {{ states('switch.yeelink_cn_358374474_sw1_on_p_2_1') not in ['unknown', 'unavailable', 'none', ''] }}
       - name: floor_heat_qi_ju_shi_heat_demand
         unique_id: floor_heat_qi_ju_shi_heat_demand
         state: >
@@ -768,12 +797,17 @@ template:
           {% set predicted = states('sensor.floor_heat_qi_ju_shi_predicted_temp') | float(0) %}
           {{ is_state('input_boolean.floor_heat_qi_ju_shi_enabled', 'on')
              and is_state('binary_sensor.floor_heat_qi_ju_shi_sensor_valid', 'on')
+             and is_state('binary_sensor.floor_heat_qi_ju_shi_valve_available', 'on')
              and current <= (target - start_delta)
              and predicted < (target - stop_margin) }}
       - name: floor_heat_da_ting_sensor_valid
         unique_id: floor_heat_da_ting_sensor_valid
         state: >
           {{ states('sensor.lumi_cn_lumi_158d0003cd3c41_v1_temperature_p_2_1') not in ['unknown', 'unavailable', 'none', ''] }}
+      - name: floor_heat_da_ting_valve_available
+        unique_id: floor_heat_da_ting_valve_available
+        state: >
+          {{ states('switch.yeelink_cn_358373839_sw1_on_p_2_1') not in ['unknown', 'unavailable', 'none', ''] }}
       - name: floor_heat_da_ting_heat_demand
         unique_id: floor_heat_da_ting_heat_demand
         state: >
@@ -784,12 +818,17 @@ template:
           {% set predicted = states('sensor.floor_heat_da_ting_predicted_temp') | float(0) %}
           {{ is_state('input_boolean.floor_heat_da_ting_enabled', 'on')
              and is_state('binary_sensor.floor_heat_da_ting_sensor_valid', 'on')
+             and is_state('binary_sensor.floor_heat_da_ting_valve_available', 'on')
              and current <= (target - start_delta)
              and predicted < (target - stop_margin) }}
       - name: floor_heat_wan_ju_fang_sensor_valid
         unique_id: floor_heat_wan_ju_fang_sensor_valid
         state: >
           {{ states('sensor.lumi_cn_lumi_158d0002b96514_v1_temperature_p_2_1') not in ['unknown', 'unavailable', 'none', ''] }}
+      - name: floor_heat_wan_ju_fang_valve_available
+        unique_id: floor_heat_wan_ju_fang_valve_available
+        state: >
+          {{ states('switch.yeelink_cn_358374550_sw1_on_p_3_1') not in ['unknown', 'unavailable', 'none', ''] }}
       - name: floor_heat_wan_ju_fang_heat_demand
         unique_id: floor_heat_wan_ju_fang_heat_demand
         state: >
@@ -800,6 +839,7 @@ template:
           {% set predicted = states('sensor.floor_heat_wan_ju_fang_predicted_temp') | float(0) %}
           {{ is_state('input_boolean.floor_heat_wan_ju_fang_enabled', 'on')
              and is_state('binary_sensor.floor_heat_wan_ju_fang_sensor_valid', 'on')
+             and is_state('binary_sensor.floor_heat_wan_ju_fang_valve_available', 'on')
              and current <= (target - start_delta)
              and predicted < (target - stop_margin) }}
       - name: floor_heat_any_demand
@@ -1018,90 +1058,98 @@ automation:
         target:
           entity_id: script.di_nuan_dan_fang_jian_ping_gu
         data:
-          enabled_entity: input_boolean.floor_heat_zhu_wo_enabled
-          sensor_valid_entity: binary_sensor.floor_heat_zhu_wo_sensor_valid
-          current_temperature_entity: sensor.lumi_cn_lumi_158d00041f4592_v1_temperature_p_2_1
-          target_temperature_entity: input_number.floor_heat_zhu_wo_target_temp
-          predicted_temperature_entity: sensor.floor_heat_zhu_wo_predicted_temp
-          valve_entity: switch.yeelink_cn_358374474_sw1_on_p_3_1
-          last_switch_entity: input_datetime.floor_heat_zhu_wo_last_switch_at
+          variables:
+            enabled_entity: input_boolean.floor_heat_zhu_wo_enabled
+            sensor_valid_entity: binary_sensor.floor_heat_zhu_wo_sensor_valid
+            current_temperature_entity: sensor.lumi_cn_lumi_158d00041f4592_v1_temperature_p_2_1
+            target_temperature_entity: input_number.floor_heat_zhu_wo_target_temp
+            predicted_temperature_entity: sensor.floor_heat_zhu_wo_predicted_temp
+            valve_entity: switch.yeelink_cn_358374474_sw1_on_p_3_1
+            last_switch_entity: input_datetime.floor_heat_zhu_wo_last_switch_at
       - action: script.turn_on
         target:
           entity_id: script.di_nuan_dan_fang_jian_ping_gu
         data:
-          enabled_entity: input_boolean.floor_heat_er_tong_fang_enabled
-          sensor_valid_entity: binary_sensor.floor_heat_er_tong_fang_sensor_valid
-          current_temperature_entity: sensor.lumi_cn_lumi_158d000406b1e1_v1_temperature_p_2_1
-          target_temperature_entity: input_number.floor_heat_er_tong_fang_target_temp
-          predicted_temperature_entity: sensor.floor_heat_er_tong_fang_predicted_temp
-          valve_entity: switch.yeelink_cn_358374550_sw1_on_p_2_1
-          last_switch_entity: input_datetime.floor_heat_er_tong_fang_last_switch_at
+          variables:
+            enabled_entity: input_boolean.floor_heat_er_tong_fang_enabled
+            sensor_valid_entity: binary_sensor.floor_heat_er_tong_fang_sensor_valid
+            current_temperature_entity: sensor.lumi_cn_lumi_158d000406b1e1_v1_temperature_p_2_1
+            target_temperature_entity: input_number.floor_heat_er_tong_fang_target_temp
+            predicted_temperature_entity: sensor.floor_heat_er_tong_fang_predicted_temp
+            valve_entity: switch.yeelink_cn_358374550_sw1_on_p_2_1
+            last_switch_entity: input_datetime.floor_heat_er_tong_fang_last_switch_at
       - action: script.turn_on
         target:
           entity_id: script.di_nuan_dan_fang_jian_ping_gu
         data:
-          enabled_entity: input_boolean.floor_heat_lao_ren_fang_enabled
-          sensor_valid_entity: binary_sensor.floor_heat_lao_ren_fang_sensor_valid
-          current_temperature_entity: sensor.lumi_cn_lumi_158d00044c0213_v1_temperature_p_2_1
-          target_temperature_entity: input_number.floor_heat_lao_ren_fang_target_temp
-          predicted_temperature_entity: sensor.floor_heat_lao_ren_fang_predicted_temp
-          valve_entity: switch.yeelink_cn_358373839_sw1_on_p_3_1
-          last_switch_entity: input_datetime.floor_heat_lao_ren_fang_last_switch_at
+          variables:
+            enabled_entity: input_boolean.floor_heat_lao_ren_fang_enabled
+            sensor_valid_entity: binary_sensor.floor_heat_lao_ren_fang_sensor_valid
+            current_temperature_entity: sensor.lumi_cn_lumi_158d00044c0213_v1_temperature_p_2_1
+            target_temperature_entity: input_number.floor_heat_lao_ren_fang_target_temp
+            predicted_temperature_entity: sensor.floor_heat_lao_ren_fang_predicted_temp
+            valve_entity: switch.yeelink_cn_358373839_sw1_on_p_3_1
+            last_switch_entity: input_datetime.floor_heat_lao_ren_fang_last_switch_at
       - action: script.turn_on
         target:
           entity_id: script.di_nuan_dan_fang_jian_ping_gu
         data:
-          enabled_entity: input_boolean.floor_heat_shu_fang_enabled
-          sensor_valid_entity: binary_sensor.floor_heat_shu_fang_sensor_valid
-          current_temperature_entity: sensor.lumi_cn_lumi_158d00044bc2eb_v1_temperature_p_2_1
-          target_temperature_entity: input_number.floor_heat_shu_fang_target_temp
-          predicted_temperature_entity: sensor.floor_heat_shu_fang_predicted_temp
-          valve_entity: switch.yeelink_cn_404920863_sw1_on_p_2_1
-          last_switch_entity: input_datetime.floor_heat_shu_fang_last_switch_at
+          variables:
+            enabled_entity: input_boolean.floor_heat_shu_fang_enabled
+            sensor_valid_entity: binary_sensor.floor_heat_shu_fang_sensor_valid
+            current_temperature_entity: sensor.lumi_cn_lumi_158d00044bc2eb_v1_temperature_p_2_1
+            target_temperature_entity: input_number.floor_heat_shu_fang_target_temp
+            predicted_temperature_entity: sensor.floor_heat_shu_fang_predicted_temp
+            valve_entity: switch.yeelink_cn_404920863_sw1_on_p_2_1
+            last_switch_entity: input_datetime.floor_heat_shu_fang_last_switch_at
       - action: script.turn_on
         target:
           entity_id: script.di_nuan_dan_fang_jian_ping_gu
         data:
-          enabled_entity: input_boolean.floor_heat_can_ting_enabled
-          sensor_valid_entity: binary_sensor.floor_heat_can_ting_sensor_valid
-          current_temperature_entity: sensor.lumi_cn_lumi_158d00041e2f7c_v1_temperature_p_2_1
-          target_temperature_entity: input_number.floor_heat_can_ting_target_temp
-          predicted_temperature_entity: sensor.floor_heat_can_ting_predicted_temp
-          valve_entity: switch.yeelink_cn_404920863_sw1_on_p_3_1
-          last_switch_entity: input_datetime.floor_heat_can_ting_last_switch_at
+          variables:
+            enabled_entity: input_boolean.floor_heat_can_ting_enabled
+            sensor_valid_entity: binary_sensor.floor_heat_can_ting_sensor_valid
+            current_temperature_entity: sensor.lumi_cn_lumi_158d00041e2f7c_v1_temperature_p_2_1
+            target_temperature_entity: input_number.floor_heat_can_ting_target_temp
+            predicted_temperature_entity: sensor.floor_heat_can_ting_predicted_temp
+            valve_entity: switch.yeelink_cn_404920863_sw1_on_p_3_1
+            last_switch_entity: input_datetime.floor_heat_can_ting_last_switch_at
       - action: script.turn_on
         target:
           entity_id: script.di_nuan_dan_fang_jian_ping_gu
         data:
-          enabled_entity: input_boolean.floor_heat_qi_ju_shi_enabled
-          sensor_valid_entity: binary_sensor.floor_heat_qi_ju_shi_sensor_valid
-          current_temperature_entity: sensor.lumi_cn_lumi_158d0003cd3c36_v1_temperature_p_2_1
-          target_temperature_entity: input_number.floor_heat_qi_ju_shi_target_temp
-          predicted_temperature_entity: sensor.floor_heat_qi_ju_shi_predicted_temp
-          valve_entity: switch.yeelink_cn_358374474_sw1_on_p_2_1
-          last_switch_entity: input_datetime.floor_heat_qi_ju_shi_last_switch_at
+          variables:
+            enabled_entity: input_boolean.floor_heat_qi_ju_shi_enabled
+            sensor_valid_entity: binary_sensor.floor_heat_qi_ju_shi_sensor_valid
+            current_temperature_entity: sensor.lumi_cn_lumi_158d0003cd3c36_v1_temperature_p_2_1
+            target_temperature_entity: input_number.floor_heat_qi_ju_shi_target_temp
+            predicted_temperature_entity: sensor.floor_heat_qi_ju_shi_predicted_temp
+            valve_entity: switch.yeelink_cn_358374474_sw1_on_p_2_1
+            last_switch_entity: input_datetime.floor_heat_qi_ju_shi_last_switch_at
       - action: script.turn_on
         target:
           entity_id: script.di_nuan_dan_fang_jian_ping_gu
         data:
-          enabled_entity: input_boolean.floor_heat_da_ting_enabled
-          sensor_valid_entity: binary_sensor.floor_heat_da_ting_sensor_valid
-          current_temperature_entity: sensor.lumi_cn_lumi_158d0003cd3c41_v1_temperature_p_2_1
-          target_temperature_entity: input_number.floor_heat_da_ting_target_temp
-          predicted_temperature_entity: sensor.floor_heat_da_ting_predicted_temp
-          valve_entity: switch.yeelink_cn_358373839_sw1_on_p_2_1
-          last_switch_entity: input_datetime.floor_heat_da_ting_last_switch_at
+          variables:
+            enabled_entity: input_boolean.floor_heat_da_ting_enabled
+            sensor_valid_entity: binary_sensor.floor_heat_da_ting_sensor_valid
+            current_temperature_entity: sensor.lumi_cn_lumi_158d0003cd3c41_v1_temperature_p_2_1
+            target_temperature_entity: input_number.floor_heat_da_ting_target_temp
+            predicted_temperature_entity: sensor.floor_heat_da_ting_predicted_temp
+            valve_entity: switch.yeelink_cn_358373839_sw1_on_p_2_1
+            last_switch_entity: input_datetime.floor_heat_da_ting_last_switch_at
       - action: script.turn_on
         target:
           entity_id: script.di_nuan_dan_fang_jian_ping_gu
         data:
-          enabled_entity: input_boolean.floor_heat_wan_ju_fang_enabled
-          sensor_valid_entity: binary_sensor.floor_heat_wan_ju_fang_sensor_valid
-          current_temperature_entity: sensor.lumi_cn_lumi_158d0002b96514_v1_temperature_p_2_1
-          target_temperature_entity: input_number.floor_heat_wan_ju_fang_target_temp
-          predicted_temperature_entity: sensor.floor_heat_wan_ju_fang_predicted_temp
-          valve_entity: switch.yeelink_cn_358374550_sw1_on_p_3_1
-          last_switch_entity: input_datetime.floor_heat_wan_ju_fang_last_switch_at
+          variables:
+            enabled_entity: input_boolean.floor_heat_wan_ju_fang_enabled
+            sensor_valid_entity: binary_sensor.floor_heat_wan_ju_fang_sensor_valid
+            current_temperature_entity: sensor.lumi_cn_lumi_158d0002b96514_v1_temperature_p_2_1
+            target_temperature_entity: input_number.floor_heat_wan_ju_fang_target_temp
+            predicted_temperature_entity: sensor.floor_heat_wan_ju_fang_predicted_temp
+            valve_entity: switch.yeelink_cn_358374550_sw1_on_p_3_1
+            last_switch_entity: input_datetime.floor_heat_wan_ju_fang_last_switch_at
   - id: floor_heat_set_preset_targets
     alias: 地暖预设温度同步
     trigger:
