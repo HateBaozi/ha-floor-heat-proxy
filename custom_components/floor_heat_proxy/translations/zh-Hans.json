@@ -1,0 +1,17 @@
+{
+  "title": "地暖 Climate 代理",
+  "entity": {
+    "climate": {
+      "preset_mode": {
+        "state": {
+          "none": "无",
+          "away": "离家",
+          "comfort": "舒适",
+          "home": "在家",
+          "sleep": "睡眠"
+        }
+      }
+    }
+  }
+}
+

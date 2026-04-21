@@ -1,0 +1,1199 @@
+input_number:
+  floor_heat_prediction_horizon_min:
+    name: 地暖预测窗口
+    min: 5
+    max: 60
+    step: 1
+    unit_of_measurement: min
+    mode: box
+    initial: 25
+  floor_heat_start_delta:
+    name: 地暖启动温差
+    min: 0.1
+    max: 2.0
+    step: 0.05
+    unit_of_measurement: °C
+    mode: box
+    initial: 0.35
+  floor_heat_stop_margin:
+    name: 地暖停热边距
+    min: 0.0
+    max: 1.0
+    step: 0.05
+    unit_of_measurement: °C
+    mode: box
+    initial: 0.15
+  floor_heat_min_on_min:
+    name: 地暖最小开启时长
+    min: 5
+    max: 120
+    step: 1
+    unit_of_measurement: min
+    mode: box
+    initial: 20
+  floor_heat_min_off_min:
+    name: 地暖最小关闭时长
+    min: 5
+    max: 120
+    step: 1
+    unit_of_measurement: min
+    mode: box
+    initial: 15
+  floor_heat_boiler_start_delay_sec:
+    name: 地暖锅炉启动确认
+    min: 30
+    max: 1800
+    step: 10
+    unit_of_measurement: s
+    mode: box
+    initial: 180
+  floor_heat_boiler_stop_delay_min:
+    name: 地暖锅炉停机延时
+    min: 1
+    max: 60
+    step: 1
+    unit_of_measurement: min
+    mode: box
+    initial: 8
+  floor_heat_pump_stop_delay_min:
+    name: 地暖泵停机延时
+    min: 1
+    max: 60
+    step: 1
+    unit_of_measurement: min
+    mode: box
+    initial: 12
+  floor_heat_residual_bias:
+    name: 地暖余热偏置
+    min: 0.0
+    max: 1.5
+    step: 0.05
+    unit_of_measurement: °C
+    mode: box
+    initial: 0.25
+  floor_heat_zhu_wo_target_temp:
+    name: 主卧地暖目标温度
+    min: 15
+    max: 30
+    step: 0.5
+    unit_of_measurement: °C
+    initial: 22
+  floor_heat_er_tong_fang_target_temp:
+    name: 儿童房地暖目标温度
+    min: 15
+    max: 30
+    step: 0.5
+    unit_of_measurement: °C
+    initial: 22
+  floor_heat_lao_ren_fang_target_temp:
+    name: 老人房地暖目标温度
+    min: 15
+    max: 30
+    step: 0.5
+    unit_of_measurement: °C
+    initial: 22
+  floor_heat_shu_fang_target_temp:
+    name: 书房地暖目标温度
+    min: 15
+    max: 30
+    step: 0.5
+    unit_of_measurement: °C
+    initial: 22
+  floor_heat_can_ting_target_temp:
+    name: 餐厅地暖目标温度
+    min: 15
+    max: 30
+    step: 0.5
+    unit_of_measurement: °C
+    initial: 22
+  floor_heat_qi_ju_shi_target_temp:
+    name: 起居室地暖目标温度
+    min: 15
+    max: 30
+    step: 0.5
+    unit_of_measurement: °C
+    initial: 22
+  floor_heat_da_ting_target_temp:
+    name: 大厅地暖目标温度
+    min: 15
+    max: 30
+    step: 0.5
+    unit_of_measurement: °C
+    initial: 22
+  floor_heat_wan_ju_fang_target_temp:
+    name: 玩具房地暖目标温度
+    min: 15
+    max: 30
+    step: 0.5
+    unit_of_measurement: °C
+    initial: 22
+  floor_heat_zhu_wo_temp_10m:
+    name: 主卧10分钟前温度
+    min: 0
+    max: 50
+    step: 0.1
+    unit_of_measurement: °C
+    initial: 0
+  floor_heat_zhu_wo_temp_30m:
+    name: 主卧30分钟前温度
+    min: 0
+    max: 50
+    step: 0.1
+    unit_of_measurement: °C
+    initial: 0
+  floor_heat_er_tong_fang_temp_10m:
+    name: 儿童房10分钟前温度
+    min: 0
+    max: 50
+    step: 0.1
+    unit_of_measurement: °C
+    initial: 0
+  floor_heat_er_tong_fang_temp_30m:
+    name: 儿童房30分钟前温度
+    min: 0
+    max: 50
+    step: 0.1
+    unit_of_measurement: °C
+    initial: 0
+  floor_heat_lao_ren_fang_temp_10m:
+    name: 老人房10分钟前温度
+    min: 0
+    max: 50
+    step: 0.1
+    unit_of_measurement: °C
+    initial: 0
+  floor_heat_lao_ren_fang_temp_30m:
+    name: 老人房30分钟前温度
+    min: 0
+    max: 50
+    step: 0.1
+    unit_of_measurement: °C
+    initial: 0
+  floor_heat_shu_fang_temp_10m:
+    name: 书房10分钟前温度
+    min: 0
+    max: 50
+    step: 0.1
+    unit_of_measurement: °C
+    initial: 0
+  floor_heat_shu_fang_temp_30m:
+    name: 书房30分钟前温度
+    min: 0
+    max: 50
+    step: 0.1
+    unit_of_measurement: °C
+    initial: 0
+  floor_heat_can_ting_temp_10m:
+    name: 餐厅10分钟前温度
+    min: 0
+    max: 50
+    step: 0.1
+    unit_of_measurement: °C
+    initial: 0
+  floor_heat_can_ting_temp_30m:
+    name: 餐厅30分钟前温度
+    min: 0
+    max: 50
+    step: 0.1
+    unit_of_measurement: °C
+    initial: 0
+  floor_heat_qi_ju_shi_temp_10m:
+    name: 起居室10分钟前温度
+    min: 0
+    max: 50
+    step: 0.1
+    unit_of_measurement: °C
+    initial: 0
+  floor_heat_qi_ju_shi_temp_30m:
+    name: 起居室30分钟前温度
+    min: 0
+    max: 50
+    step: 0.1
+    unit_of_measurement: °C
+    initial: 0
+  floor_heat_da_ting_temp_10m:
+    name: 大厅10分钟前温度
+    min: 0
+    max: 50
+    step: 0.1
+    unit_of_measurement: °C
+    initial: 0
+  floor_heat_da_ting_temp_30m:
+    name: 大厅30分钟前温度
+    min: 0
+    max: 50
+    step: 0.1
+    unit_of_measurement: °C
+    initial: 0
+  floor_heat_wan_ju_fang_temp_10m:
+    name: 玩具房10分钟前温度
+    min: 0
+    max: 50
+    step: 0.1
+    unit_of_measurement: °C
+    initial: 0
+  floor_heat_wan_ju_fang_temp_30m:
+    name: 玩具房30分钟前温度
+    min: 0
+    max: 50
+    step: 0.1
+    unit_of_measurement: °C
+    initial: 0
+
+input_boolean:
+  floor_heat_zhu_wo_enabled:
+    name: 主卧地暖启用
+    initial: true
+  floor_heat_er_tong_fang_enabled:
+    name: 儿童房地暖启用
+    initial: true
+  floor_heat_lao_ren_fang_enabled:
+    name: 老人房地暖启用
+    initial: true
+  floor_heat_shu_fang_enabled:
+    name: 书房地暖启用
+    initial: true
+  floor_heat_can_ting_enabled:
+    name: 餐厅地暖启用
+    initial: true
+  floor_heat_qi_ju_shi_enabled:
+    name: 起居室地暖启用
+    initial: true
+  floor_heat_da_ting_enabled:
+    name: 大厅地暖启用
+    initial: true
+  floor_heat_wan_ju_fang_enabled:
+    name: 玩具房地暖启用
+    initial: true
+
+input_select:
+  floor_heat_zhu_wo_preset:
+    name: 主卧地暖预设
+    options: ["none", "away", "comfort", "home", "sleep"]
+    initial: none
+  floor_heat_er_tong_fang_preset:
+    name: 儿童房地暖预设
+    options: ["none", "away", "comfort", "home", "sleep"]
+    initial: none
+  floor_heat_lao_ren_fang_preset:
+    name: 老人房地暖预设
+    options: ["none", "away", "comfort", "home", "sleep"]
+    initial: none
+  floor_heat_shu_fang_preset:
+    name: 书房地暖预设
+    options: ["none", "away", "comfort", "home", "sleep"]
+    initial: none
+  floor_heat_can_ting_preset:
+    name: 餐厅地暖预设
+    options: ["none", "away", "comfort", "home", "sleep"]
+    initial: none
+  floor_heat_qi_ju_shi_preset:
+    name: 起居室地暖预设
+    options: ["none", "away", "comfort", "home", "sleep"]
+    initial: none
+  floor_heat_da_ting_preset:
+    name: 大厅地暖预设
+    options: ["none", "away", "comfort", "home", "sleep"]
+    initial: none
+  floor_heat_wan_ju_fang_preset:
+    name: 玩具房地暖预设
+    options: ["none", "away", "comfort", "home", "sleep"]
+    initial: none
+
+input_datetime:
+  floor_heat_zhu_wo_last_switch_at:
+    name: 主卧地暖最近切换
+    has_date: true
+    has_time: true
+  floor_heat_er_tong_fang_last_switch_at:
+    name: 儿童房地暖最近切换
+    has_date: true
+    has_time: true
+  floor_heat_lao_ren_fang_last_switch_at:
+    name: 老人房地暖最近切换
+    has_date: true
+    has_time: true
+  floor_heat_shu_fang_last_switch_at:
+    name: 书房地暖最近切换
+    has_date: true
+    has_time: true
+  floor_heat_can_ting_last_switch_at:
+    name: 餐厅地暖最近切换
+    has_date: true
+    has_time: true
+  floor_heat_qi_ju_shi_last_switch_at:
+    name: 起居室地暖最近切换
+    has_date: true
+    has_time: true
+  floor_heat_da_ting_last_switch_at:
+    name: 大厅地暖最近切换
+    has_date: true
+    has_time: true
+  floor_heat_wan_ju_fang_last_switch_at:
+    name: 玩具房地暖最近切换
+    has_date: true
+    has_time: true
+
+template:
+  - trigger:
+      - trigger: homeassistant
+        event: start
+      - trigger: state
+        entity_id:
+          - sensor.lumi_cn_lumi_158d00041f4592_v1_temperature_p_2_1
+          - sensor.lumi_cn_lumi_158d000406b1e1_v1_temperature_p_2_1
+          - sensor.lumi_cn_lumi_158d00044c0213_v1_temperature_p_2_1
+          - sensor.lumi_cn_lumi_158d00044bc2eb_v1_temperature_p_2_1
+          - sensor.lumi_cn_lumi_158d00041e2f7c_v1_temperature_p_2_1
+          - sensor.lumi_cn_lumi_158d0003cd3c36_v1_temperature_p_2_1
+          - sensor.lumi_cn_lumi_158d0003cd3c41_v1_temperature_p_2_1
+          - sensor.lumi_cn_lumi_158d0002b96514_v1_temperature_p_2_1
+          - input_number.floor_heat_zhu_wo_temp_10m
+          - input_number.floor_heat_zhu_wo_temp_30m
+          - input_number.floor_heat_er_tong_fang_temp_10m
+          - input_number.floor_heat_er_tong_fang_temp_30m
+          - input_number.floor_heat_lao_ren_fang_temp_10m
+          - input_number.floor_heat_lao_ren_fang_temp_30m
+          - input_number.floor_heat_shu_fang_temp_10m
+          - input_number.floor_heat_shu_fang_temp_30m
+          - input_number.floor_heat_can_ting_temp_10m
+          - input_number.floor_heat_can_ting_temp_30m
+          - input_number.floor_heat_qi_ju_shi_temp_10m
+          - input_number.floor_heat_qi_ju_shi_temp_30m
+          - input_number.floor_heat_da_ting_temp_10m
+          - input_number.floor_heat_da_ting_temp_30m
+          - input_number.floor_heat_wan_ju_fang_temp_10m
+          - input_number.floor_heat_wan_ju_fang_temp_30m
+          - input_number.floor_heat_prediction_horizon_min
+          - input_number.floor_heat_residual_bias
+          - binary_sensor.wei_neng_wai_zhi_beng
+          - switch.lumi_cn_lumi_158d0001a5d316_v1_on_p_2_1
+          - switch.yeelink_cn_358374474_sw1_on_p_3_1
+          - switch.yeelink_cn_358374550_sw1_on_p_2_1
+          - switch.yeelink_cn_358373839_sw1_on_p_3_1
+          - switch.yeelink_cn_404920863_sw1_on_p_2_1
+          - switch.yeelink_cn_404920863_sw1_on_p_3_1
+          - switch.yeelink_cn_358374474_sw1_on_p_2_1
+          - switch.yeelink_cn_358373839_sw1_on_p_2_1
+          - switch.yeelink_cn_358374550_sw1_on_p_3_1
+    sensor:
+      - name: floor_heat_zhu_wo_slope_10m
+        unique_id: floor_heat_zhu_wo_slope_10m
+        unit_of_measurement: "°C/min"
+        state: >
+          {% set current = states('sensor.lumi_cn_lumi_158d00041f4592_v1_temperature_p_2_1') | float(0) %}
+          {% set previous = states('input_number.floor_heat_zhu_wo_temp_10m') | float(0) %}
+          {{ ((current - previous) / 10) | round(4) }}
+      - name: floor_heat_zhu_wo_slope_30m
+        unique_id: floor_heat_zhu_wo_slope_30m
+        unit_of_measurement: "°C/min"
+        state: >
+          {% set current = states('sensor.lumi_cn_lumi_158d00041f4592_v1_temperature_p_2_1') | float(0) %}
+          {% set previous = states('input_number.floor_heat_zhu_wo_temp_30m') | float(0) %}
+          {{ ((current - previous) / 30) | round(4) }}
+      - name: floor_heat_zhu_wo_predicted_temp
+        unique_id: floor_heat_zhu_wo_predicted_temp
+        unit_of_measurement: "°C"
+        state: >
+          {% set current = states('sensor.lumi_cn_lumi_158d00041f4592_v1_temperature_p_2_1') | float(0) %}
+          {% set slope10 = states('sensor.floor_heat_zhu_wo_slope_10m') | float(0) %}
+          {% set slope30 = states('sensor.floor_heat_zhu_wo_slope_30m') | float(0) %}
+          {% set horizon = states('input_number.floor_heat_prediction_horizon_min') | float(25) %}
+          {% set residual = states('input_number.floor_heat_residual_bias') | float(0.25) %}
+          {% set valve_on = is_state('switch.yeelink_cn_358374474_sw1_on_p_3_1', 'on') %}
+          {% set heat_residual = valve_on or is_state('binary_sensor.wei_neng_wai_zhi_beng', 'on') or is_state('switch.lumi_cn_lumi_158d0001a5d316_v1_on_p_2_1', 'on') %}
+          {% set weighted = slope10 * 0.7 + slope30 * 0.3 %}
+          {{ (current + weighted * horizon + (residual if heat_residual else 0)) | round(2) }}
+      - name: floor_heat_zhu_wo_hvac_action
+        unique_id: floor_heat_zhu_wo_hvac_action
+        state: >
+          {% if is_state('input_boolean.floor_heat_zhu_wo_enabled', 'off') %}
+            off
+          {% elif is_state('switch.yeelink_cn_358374474_sw1_on_p_3_1', 'on') %}
+            heating
+          {% else %}
+            idle
+          {% endif %}
+      - name: floor_heat_er_tong_fang_slope_10m
+        unique_id: floor_heat_er_tong_fang_slope_10m
+        unit_of_measurement: "°C/min"
+        state: >
+          {% set current = states('sensor.lumi_cn_lumi_158d000406b1e1_v1_temperature_p_2_1') | float(0) %}
+          {% set previous = states('input_number.floor_heat_er_tong_fang_temp_10m') | float(0) %}
+          {{ ((current - previous) / 10) | round(4) }}
+      - name: floor_heat_er_tong_fang_slope_30m
+        unique_id: floor_heat_er_tong_fang_slope_30m
+        unit_of_measurement: "°C/min"
+        state: >
+          {% set current = states('sensor.lumi_cn_lumi_158d000406b1e1_v1_temperature_p_2_1') | float(0) %}
+          {% set previous = states('input_number.floor_heat_er_tong_fang_temp_30m') | float(0) %}
+          {{ ((current - previous) / 30) | round(4) }}
+      - name: floor_heat_er_tong_fang_predicted_temp
+        unique_id: floor_heat_er_tong_fang_predicted_temp
+        unit_of_measurement: "°C"
+        state: >
+          {% set current = states('sensor.lumi_cn_lumi_158d000406b1e1_v1_temperature_p_2_1') | float(0) %}
+          {% set slope10 = states('sensor.floor_heat_er_tong_fang_slope_10m') | float(0) %}
+          {% set slope30 = states('sensor.floor_heat_er_tong_fang_slope_30m') | float(0) %}
+          {% set horizon = states('input_number.floor_heat_prediction_horizon_min') | float(25) %}
+          {% set residual = states('input_number.floor_heat_residual_bias') | float(0.25) %}
+          {% set valve_on = is_state('switch.yeelink_cn_358374550_sw1_on_p_2_1', 'on') %}
+          {% set heat_residual = valve_on or is_state('binary_sensor.wei_neng_wai_zhi_beng', 'on') or is_state('switch.lumi_cn_lumi_158d0001a5d316_v1_on_p_2_1', 'on') %}
+          {% set weighted = slope10 * 0.7 + slope30 * 0.3 %}
+          {{ (current + weighted * horizon + (residual if heat_residual else 0)) | round(2) }}
+      - name: floor_heat_er_tong_fang_hvac_action
+        unique_id: floor_heat_er_tong_fang_hvac_action
+        state: >
+          {% if is_state('input_boolean.floor_heat_er_tong_fang_enabled', 'off') %}
+            off
+          {% elif is_state('switch.yeelink_cn_358374550_sw1_on_p_2_1', 'on') %}
+            heating
+          {% else %}
+            idle
+          {% endif %}
+      - name: floor_heat_lao_ren_fang_slope_10m
+        unique_id: floor_heat_lao_ren_fang_slope_10m
+        unit_of_measurement: "°C/min"
+        state: >
+          {% set current = states('sensor.lumi_cn_lumi_158d00044c0213_v1_temperature_p_2_1') | float(0) %}
+          {% set previous = states('input_number.floor_heat_lao_ren_fang_temp_10m') | float(0) %}
+          {{ ((current - previous) / 10) | round(4) }}
+      - name: floor_heat_lao_ren_fang_slope_30m
+        unique_id: floor_heat_lao_ren_fang_slope_30m
+        unit_of_measurement: "°C/min"
+        state: >
+          {% set current = states('sensor.lumi_cn_lumi_158d00044c0213_v1_temperature_p_2_1') | float(0) %}
+          {% set previous = states('input_number.floor_heat_lao_ren_fang_temp_30m') | float(0) %}
+          {{ ((current - previous) / 30) | round(4) }}
+      - name: floor_heat_lao_ren_fang_predicted_temp
+        unique_id: floor_heat_lao_ren_fang_predicted_temp
+        unit_of_measurement: "°C"
+        state: >
+          {% set current = states('sensor.lumi_cn_lumi_158d00044c0213_v1_temperature_p_2_1') | float(0) %}
+          {% set slope10 = states('sensor.floor_heat_lao_ren_fang_slope_10m') | float(0) %}
+          {% set slope30 = states('sensor.floor_heat_lao_ren_fang_slope_30m') | float(0) %}
+          {% set horizon = states('input_number.floor_heat_prediction_horizon_min') | float(25) %}
+          {% set residual = states('input_number.floor_heat_residual_bias') | float(0.25) %}
+          {% set valve_on = is_state('switch.yeelink_cn_358373839_sw1_on_p_3_1', 'on') %}
+          {% set heat_residual = valve_on or is_state('binary_sensor.wei_neng_wai_zhi_beng', 'on') or is_state('switch.lumi_cn_lumi_158d0001a5d316_v1_on_p_2_1', 'on') %}
+          {% set weighted = slope10 * 0.7 + slope30 * 0.3 %}
+          {{ (current + weighted * horizon + (residual if heat_residual else 0)) | round(2) }}
+      - name: floor_heat_lao_ren_fang_hvac_action
+        unique_id: floor_heat_lao_ren_fang_hvac_action
+        state: >
+          {% if is_state('input_boolean.floor_heat_lao_ren_fang_enabled', 'off') %}
+            off
+          {% elif is_state('switch.yeelink_cn_358373839_sw1_on_p_3_1', 'on') %}
+            heating
+          {% else %}
+            idle
+          {% endif %}
+      - name: floor_heat_shu_fang_slope_10m
+        unique_id: floor_heat_shu_fang_slope_10m
+        unit_of_measurement: "°C/min"
+        state: >
+          {% set current = states('sensor.lumi_cn_lumi_158d00044bc2eb_v1_temperature_p_2_1') | float(0) %}
+          {% set previous = states('input_number.floor_heat_shu_fang_temp_10m') | float(0) %}
+          {{ ((current - previous) / 10) | round(4) }}
+      - name: floor_heat_shu_fang_slope_30m
+        unique_id: floor_heat_shu_fang_slope_30m
+        unit_of_measurement: "°C/min"
+        state: >
+          {% set current = states('sensor.lumi_cn_lumi_158d00044bc2eb_v1_temperature_p_2_1') | float(0) %}
+          {% set previous = states('input_number.floor_heat_shu_fang_temp_30m') | float(0) %}
+          {{ ((current - previous) / 30) | round(4) }}
+      - name: floor_heat_shu_fang_predicted_temp
+        unique_id: floor_heat_shu_fang_predicted_temp
+        unit_of_measurement: "°C"
+        state: >
+          {% set current = states('sensor.lumi_cn_lumi_158d00044bc2eb_v1_temperature_p_2_1') | float(0) %}
+          {% set slope10 = states('sensor.floor_heat_shu_fang_slope_10m') | float(0) %}
+          {% set slope30 = states('sensor.floor_heat_shu_fang_slope_30m') | float(0) %}
+          {% set horizon = states('input_number.floor_heat_prediction_horizon_min') | float(25) %}
+          {% set residual = states('input_number.floor_heat_residual_bias') | float(0.25) %}
+          {% set valve_on = is_state('switch.yeelink_cn_404920863_sw1_on_p_2_1', 'on') %}
+          {% set heat_residual = valve_on or is_state('binary_sensor.wei_neng_wai_zhi_beng', 'on') or is_state('switch.lumi_cn_lumi_158d0001a5d316_v1_on_p_2_1', 'on') %}
+          {% set weighted = slope10 * 0.7 + slope30 * 0.3 %}
+          {{ (current + weighted * horizon + (residual if heat_residual else 0)) | round(2) }}
+      - name: floor_heat_shu_fang_hvac_action
+        unique_id: floor_heat_shu_fang_hvac_action
+        state: >
+          {% if is_state('input_boolean.floor_heat_shu_fang_enabled', 'off') %}
+            off
+          {% elif is_state('switch.yeelink_cn_404920863_sw1_on_p_2_1', 'on') %}
+            heating
+          {% else %}
+            idle
+          {% endif %}
+      - name: floor_heat_can_ting_slope_10m
+        unique_id: floor_heat_can_ting_slope_10m
+        unit_of_measurement: "°C/min"
+        state: >
+          {% set current = states('sensor.lumi_cn_lumi_158d00041e2f7c_v1_temperature_p_2_1') | float(0) %}
+          {% set previous = states('input_number.floor_heat_can_ting_temp_10m') | float(0) %}
+          {{ ((current - previous) / 10) | round(4) }}
+      - name: floor_heat_can_ting_slope_30m
+        unique_id: floor_heat_can_ting_slope_30m
+        unit_of_measurement: "°C/min"
+        state: >
+          {% set current = states('sensor.lumi_cn_lumi_158d00041e2f7c_v1_temperature_p_2_1') | float(0) %}
+          {% set previous = states('input_number.floor_heat_can_ting_temp_30m') | float(0) %}
+          {{ ((current - previous) / 30) | round(4) }}
+      - name: floor_heat_can_ting_predicted_temp
+        unique_id: floor_heat_can_ting_predicted_temp
+        unit_of_measurement: "°C"
+        state: >
+          {% set current = states('sensor.lumi_cn_lumi_158d00041e2f7c_v1_temperature_p_2_1') | float(0) %}
+          {% set slope10 = states('sensor.floor_heat_can_ting_slope_10m') | float(0) %}
+          {% set slope30 = states('sensor.floor_heat_can_ting_slope_30m') | float(0) %}
+          {% set horizon = states('input_number.floor_heat_prediction_horizon_min') | float(25) %}
+          {% set residual = states('input_number.floor_heat_residual_bias') | float(0.25) %}
+          {% set valve_on = is_state('switch.yeelink_cn_404920863_sw1_on_p_3_1', 'on') %}
+          {% set heat_residual = valve_on or is_state('binary_sensor.wei_neng_wai_zhi_beng', 'on') or is_state('switch.lumi_cn_lumi_158d0001a5d316_v1_on_p_2_1', 'on') %}
+          {% set weighted = slope10 * 0.7 + slope30 * 0.3 %}
+          {{ (current + weighted * horizon + (residual if heat_residual else 0)) | round(2) }}
+      - name: floor_heat_can_ting_hvac_action
+        unique_id: floor_heat_can_ting_hvac_action
+        state: >
+          {% if is_state('input_boolean.floor_heat_can_ting_enabled', 'off') %}
+            off
+          {% elif is_state('switch.yeelink_cn_404920863_sw1_on_p_3_1', 'on') %}
+            heating
+          {% else %}
+            idle
+          {% endif %}
+      - name: floor_heat_qi_ju_shi_slope_10m
+        unique_id: floor_heat_qi_ju_shi_slope_10m
+        unit_of_measurement: "°C/min"
+        state: >
+          {% set current = states('sensor.lumi_cn_lumi_158d0003cd3c36_v1_temperature_p_2_1') | float(0) %}
+          {% set previous = states('input_number.floor_heat_qi_ju_shi_temp_10m') | float(0) %}
+          {{ ((current - previous) / 10) | round(4) }}
+      - name: floor_heat_qi_ju_shi_slope_30m
+        unique_id: floor_heat_qi_ju_shi_slope_30m
+        unit_of_measurement: "°C/min"
+        state: >
+          {% set current = states('sensor.lumi_cn_lumi_158d0003cd3c36_v1_temperature_p_2_1') | float(0) %}
+          {% set previous = states('input_number.floor_heat_qi_ju_shi_temp_30m') | float(0) %}
+          {{ ((current - previous) / 30) | round(4) }}
+      - name: floor_heat_qi_ju_shi_predicted_temp
+        unique_id: floor_heat_qi_ju_shi_predicted_temp
+        unit_of_measurement: "°C"
+        state: >
+          {% set current = states('sensor.lumi_cn_lumi_158d0003cd3c36_v1_temperature_p_2_1') | float(0) %}
+          {% set slope10 = states('sensor.floor_heat_qi_ju_shi_slope_10m') | float(0) %}
+          {% set slope30 = states('sensor.floor_heat_qi_ju_shi_slope_30m') | float(0) %}
+          {% set horizon = states('input_number.floor_heat_prediction_horizon_min') | float(25) %}
+          {% set residual = states('input_number.floor_heat_residual_bias') | float(0.25) %}
+          {% set valve_on = is_state('switch.yeelink_cn_358374474_sw1_on_p_2_1', 'on') %}
+          {% set heat_residual = valve_on or is_state('binary_sensor.wei_neng_wai_zhi_beng', 'on') or is_state('switch.lumi_cn_lumi_158d0001a5d316_v1_on_p_2_1', 'on') %}
+          {% set weighted = slope10 * 0.7 + slope30 * 0.3 %}
+          {{ (current + weighted * horizon + (residual if heat_residual else 0)) | round(2) }}
+      - name: floor_heat_qi_ju_shi_hvac_action
+        unique_id: floor_heat_qi_ju_shi_hvac_action
+        state: >
+          {% if is_state('input_boolean.floor_heat_qi_ju_shi_enabled', 'off') %}
+            off
+          {% elif is_state('switch.yeelink_cn_358374474_sw1_on_p_2_1', 'on') %}
+            heating
+          {% else %}
+            idle
+          {% endif %}
+      - name: floor_heat_da_ting_slope_10m
+        unique_id: floor_heat_da_ting_slope_10m
+        unit_of_measurement: "°C/min"
+        state: >
+          {% set current = states('sensor.lumi_cn_lumi_158d0003cd3c41_v1_temperature_p_2_1') | float(0) %}
+          {% set previous = states('input_number.floor_heat_da_ting_temp_10m') | float(0) %}
+          {{ ((current - previous) / 10) | round(4) }}
+      - name: floor_heat_da_ting_slope_30m
+        unique_id: floor_heat_da_ting_slope_30m
+        unit_of_measurement: "°C/min"
+        state: >
+          {% set current = states('sensor.lumi_cn_lumi_158d0003cd3c41_v1_temperature_p_2_1') | float(0) %}
+          {% set previous = states('input_number.floor_heat_da_ting_temp_30m') | float(0) %}
+          {{ ((current - previous) / 30) | round(4) }}
+      - name: floor_heat_da_ting_predicted_temp
+        unique_id: floor_heat_da_ting_predicted_temp
+        unit_of_measurement: "°C"
+        state: >
+          {% set current = states('sensor.lumi_cn_lumi_158d0003cd3c41_v1_temperature_p_2_1') | float(0) %}
+          {% set slope10 = states('sensor.floor_heat_da_ting_slope_10m') | float(0) %}
+          {% set slope30 = states('sensor.floor_heat_da_ting_slope_30m') | float(0) %}
+          {% set horizon = states('input_number.floor_heat_prediction_horizon_min') | float(25) %}
+          {% set residual = states('input_number.floor_heat_residual_bias') | float(0.25) %}
+          {% set valve_on = is_state('switch.yeelink_cn_358373839_sw1_on_p_2_1', 'on') %}
+          {% set heat_residual = valve_on or is_state('binary_sensor.wei_neng_wai_zhi_beng', 'on') or is_state('switch.lumi_cn_lumi_158d0001a5d316_v1_on_p_2_1', 'on') %}
+          {% set weighted = slope10 * 0.7 + slope30 * 0.3 %}
+          {{ (current + weighted * horizon + (residual if heat_residual else 0)) | round(2) }}
+      - name: floor_heat_da_ting_hvac_action
+        unique_id: floor_heat_da_ting_hvac_action
+        state: >
+          {% if is_state('input_boolean.floor_heat_da_ting_enabled', 'off') %}
+            off
+          {% elif is_state('switch.yeelink_cn_358373839_sw1_on_p_2_1', 'on') %}
+            heating
+          {% else %}
+            idle
+          {% endif %}
+      - name: floor_heat_wan_ju_fang_slope_10m
+        unique_id: floor_heat_wan_ju_fang_slope_10m
+        unit_of_measurement: "°C/min"
+        state: >
+          {% set current = states('sensor.lumi_cn_lumi_158d0002b96514_v1_temperature_p_2_1') | float(0) %}
+          {% set previous = states('input_number.floor_heat_wan_ju_fang_temp_10m') | float(0) %}
+          {{ ((current - previous) / 10) | round(4) }}
+      - name: floor_heat_wan_ju_fang_slope_30m
+        unique_id: floor_heat_wan_ju_fang_slope_30m
+        unit_of_measurement: "°C/min"
+        state: >
+          {% set current = states('sensor.lumi_cn_lumi_158d0002b96514_v1_temperature_p_2_1') | float(0) %}
+          {% set previous = states('input_number.floor_heat_wan_ju_fang_temp_30m') | float(0) %}
+          {{ ((current - previous) / 30) | round(4) }}
+      - name: floor_heat_wan_ju_fang_predicted_temp
+        unique_id: floor_heat_wan_ju_fang_predicted_temp
+        unit_of_measurement: "°C"
+        state: >
+          {% set current = states('sensor.lumi_cn_lumi_158d0002b96514_v1_temperature_p_2_1') | float(0) %}
+          {% set slope10 = states('sensor.floor_heat_wan_ju_fang_slope_10m') | float(0) %}
+          {% set slope30 = states('sensor.floor_heat_wan_ju_fang_slope_30m') | float(0) %}
+          {% set horizon = states('input_number.floor_heat_prediction_horizon_min') | float(25) %}
+          {% set residual = states('input_number.floor_heat_residual_bias') | float(0.25) %}
+          {% set valve_on = is_state('switch.yeelink_cn_358374550_sw1_on_p_3_1', 'on') %}
+          {% set heat_residual = valve_on or is_state('binary_sensor.wei_neng_wai_zhi_beng', 'on') or is_state('switch.lumi_cn_lumi_158d0001a5d316_v1_on_p_2_1', 'on') %}
+          {% set weighted = slope10 * 0.7 + slope30 * 0.3 %}
+          {{ (current + weighted * horizon + (residual if heat_residual else 0)) | round(2) }}
+      - name: floor_heat_wan_ju_fang_hvac_action
+        unique_id: floor_heat_wan_ju_fang_hvac_action
+        state: >
+          {% if is_state('input_boolean.floor_heat_wan_ju_fang_enabled', 'off') %}
+            off
+          {% elif is_state('switch.yeelink_cn_358374550_sw1_on_p_3_1', 'on') %}
+            heating
+          {% else %}
+            idle
+          {% endif %}
+    binary_sensor:
+      - name: floor_heat_zhu_wo_sensor_valid
+        unique_id: floor_heat_zhu_wo_sensor_valid
+        state: >
+          {{ states('sensor.lumi_cn_lumi_158d00041f4592_v1_temperature_p_2_1') not in ['unknown', 'unavailable', 'none', ''] }}
+      - name: floor_heat_zhu_wo_heat_demand
+        unique_id: floor_heat_zhu_wo_heat_demand
+        state: >
+          {% set current = states('sensor.lumi_cn_lumi_158d00041f4592_v1_temperature_p_2_1') | float(0) %}
+          {% set target = states('input_number.floor_heat_zhu_wo_target_temp') | float(0) %}
+          {% set start_delta = states('input_number.floor_heat_start_delta') | float(0.35) %}
+          {% set stop_margin = states('input_number.floor_heat_stop_margin') | float(0.15) %}
+          {% set predicted = states('sensor.floor_heat_zhu_wo_predicted_temp') | float(0) %}
+          {{ is_state('input_boolean.floor_heat_zhu_wo_enabled', 'on')
+             and is_state('binary_sensor.floor_heat_zhu_wo_sensor_valid', 'on')
+             and current <= (target - start_delta)
+             and predicted < (target - stop_margin) }}
+      - name: floor_heat_er_tong_fang_sensor_valid
+        unique_id: floor_heat_er_tong_fang_sensor_valid
+        state: >
+          {{ states('sensor.lumi_cn_lumi_158d000406b1e1_v1_temperature_p_2_1') not in ['unknown', 'unavailable', 'none', ''] }}
+      - name: floor_heat_er_tong_fang_heat_demand
+        unique_id: floor_heat_er_tong_fang_heat_demand
+        state: >
+          {% set current = states('sensor.lumi_cn_lumi_158d000406b1e1_v1_temperature_p_2_1') | float(0) %}
+          {% set target = states('input_number.floor_heat_er_tong_fang_target_temp') | float(0) %}
+          {% set start_delta = states('input_number.floor_heat_start_delta') | float(0.35) %}
+          {% set stop_margin = states('input_number.floor_heat_stop_margin') | float(0.15) %}
+          {% set predicted = states('sensor.floor_heat_er_tong_fang_predicted_temp') | float(0) %}
+          {{ is_state('input_boolean.floor_heat_er_tong_fang_enabled', 'on')
+             and is_state('binary_sensor.floor_heat_er_tong_fang_sensor_valid', 'on')
+             and current <= (target - start_delta)
+             and predicted < (target - stop_margin) }}
+      - name: floor_heat_lao_ren_fang_sensor_valid
+        unique_id: floor_heat_lao_ren_fang_sensor_valid
+        state: >
+          {{ states('sensor.lumi_cn_lumi_158d00044c0213_v1_temperature_p_2_1') not in ['unknown', 'unavailable', 'none', ''] }}
+      - name: floor_heat_lao_ren_fang_heat_demand
+        unique_id: floor_heat_lao_ren_fang_heat_demand
+        state: >
+          {% set current = states('sensor.lumi_cn_lumi_158d00044c0213_v1_temperature_p_2_1') | float(0) %}
+          {% set target = states('input_number.floor_heat_lao_ren_fang_target_temp') | float(0) %}
+          {% set start_delta = states('input_number.floor_heat_start_delta') | float(0.35) %}
+          {% set stop_margin = states('input_number.floor_heat_stop_margin') | float(0.15) %}
+          {% set predicted = states('sensor.floor_heat_lao_ren_fang_predicted_temp') | float(0) %}
+          {{ is_state('input_boolean.floor_heat_lao_ren_fang_enabled', 'on')
+             and is_state('binary_sensor.floor_heat_lao_ren_fang_sensor_valid', 'on')
+             and current <= (target - start_delta)
+             and predicted < (target - stop_margin) }}
+      - name: floor_heat_shu_fang_sensor_valid
+        unique_id: floor_heat_shu_fang_sensor_valid
+        state: >
+          {{ states('sensor.lumi_cn_lumi_158d00044bc2eb_v1_temperature_p_2_1') not in ['unknown', 'unavailable', 'none', ''] }}
+      - name: floor_heat_shu_fang_heat_demand
+        unique_id: floor_heat_shu_fang_heat_demand
+        state: >
+          {% set current = states('sensor.lumi_cn_lumi_158d00044bc2eb_v1_temperature_p_2_1') | float(0) %}
+          {% set target = states('input_number.floor_heat_shu_fang_target_temp') | float(0) %}
+          {% set start_delta = states('input_number.floor_heat_start_delta') | float(0.35) %}
+          {% set stop_margin = states('input_number.floor_heat_stop_margin') | float(0.15) %}
+          {% set predicted = states('sensor.floor_heat_shu_fang_predicted_temp') | float(0) %}
+          {{ is_state('input_boolean.floor_heat_shu_fang_enabled', 'on')
+             and is_state('binary_sensor.floor_heat_shu_fang_sensor_valid', 'on')
+             and current <= (target - start_delta)
+             and predicted < (target - stop_margin) }}
+      - name: floor_heat_can_ting_sensor_valid
+        unique_id: floor_heat_can_ting_sensor_valid
+        state: >
+          {{ states('sensor.lumi_cn_lumi_158d00041e2f7c_v1_temperature_p_2_1') not in ['unknown', 'unavailable', 'none', ''] }}
+      - name: floor_heat_can_ting_heat_demand
+        unique_id: floor_heat_can_ting_heat_demand
+        state: >
+          {% set current = states('sensor.lumi_cn_lumi_158d00041e2f7c_v1_temperature_p_2_1') | float(0) %}
+          {% set target = states('input_number.floor_heat_can_ting_target_temp') | float(0) %}
+          {% set start_delta = states('input_number.floor_heat_start_delta') | float(0.35) %}
+          {% set stop_margin = states('input_number.floor_heat_stop_margin') | float(0.15) %}
+          {% set predicted = states('sensor.floor_heat_can_ting_predicted_temp') | float(0) %}
+          {{ is_state('input_boolean.floor_heat_can_ting_enabled', 'on')
+             and is_state('binary_sensor.floor_heat_can_ting_sensor_valid', 'on')
+             and current <= (target - start_delta)
+             and predicted < (target - stop_margin) }}
+      - name: floor_heat_qi_ju_shi_sensor_valid
+        unique_id: floor_heat_qi_ju_shi_sensor_valid
+        state: >
+          {{ states('sensor.lumi_cn_lumi_158d0003cd3c36_v1_temperature_p_2_1') not in ['unknown', 'unavailable', 'none', ''] }}
+      - name: floor_heat_qi_ju_shi_heat_demand
+        unique_id: floor_heat_qi_ju_shi_heat_demand
+        state: >
+          {% set current = states('sensor.lumi_cn_lumi_158d0003cd3c36_v1_temperature_p_2_1') | float(0) %}
+          {% set target = states('input_number.floor_heat_qi_ju_shi_target_temp') | float(0) %}
+          {% set start_delta = states('input_number.floor_heat_start_delta') | float(0.35) %}
+          {% set stop_margin = states('input_number.floor_heat_stop_margin') | float(0.15) %}
+          {% set predicted = states('sensor.floor_heat_qi_ju_shi_predicted_temp') | float(0) %}
+          {{ is_state('input_boolean.floor_heat_qi_ju_shi_enabled', 'on')
+             and is_state('binary_sensor.floor_heat_qi_ju_shi_sensor_valid', 'on')
+             and current <= (target - start_delta)
+             and predicted < (target - stop_margin) }}
+      - name: floor_heat_da_ting_sensor_valid
+        unique_id: floor_heat_da_ting_sensor_valid
+        state: >
+          {{ states('sensor.lumi_cn_lumi_158d0003cd3c41_v1_temperature_p_2_1') not in ['unknown', 'unavailable', 'none', ''] }}
+      - name: floor_heat_da_ting_heat_demand
+        unique_id: floor_heat_da_ting_heat_demand
+        state: >
+          {% set current = states('sensor.lumi_cn_lumi_158d0003cd3c41_v1_temperature_p_2_1') | float(0) %}
+          {% set target = states('input_number.floor_heat_da_ting_target_temp') | float(0) %}
+          {% set start_delta = states('input_number.floor_heat_start_delta') | float(0.35) %}
+          {% set stop_margin = states('input_number.floor_heat_stop_margin') | float(0.15) %}
+          {% set predicted = states('sensor.floor_heat_da_ting_predicted_temp') | float(0) %}
+          {{ is_state('input_boolean.floor_heat_da_ting_enabled', 'on')
+             and is_state('binary_sensor.floor_heat_da_ting_sensor_valid', 'on')
+             and current <= (target - start_delta)
+             and predicted < (target - stop_margin) }}
+      - name: floor_heat_wan_ju_fang_sensor_valid
+        unique_id: floor_heat_wan_ju_fang_sensor_valid
+        state: >
+          {{ states('sensor.lumi_cn_lumi_158d0002b96514_v1_temperature_p_2_1') not in ['unknown', 'unavailable', 'none', ''] }}
+      - name: floor_heat_wan_ju_fang_heat_demand
+        unique_id: floor_heat_wan_ju_fang_heat_demand
+        state: >
+          {% set current = states('sensor.lumi_cn_lumi_158d0002b96514_v1_temperature_p_2_1') | float(0) %}
+          {% set target = states('input_number.floor_heat_wan_ju_fang_target_temp') | float(0) %}
+          {% set start_delta = states('input_number.floor_heat_start_delta') | float(0.35) %}
+          {% set stop_margin = states('input_number.floor_heat_stop_margin') | float(0.15) %}
+          {% set predicted = states('sensor.floor_heat_wan_ju_fang_predicted_temp') | float(0) %}
+          {{ is_state('input_boolean.floor_heat_wan_ju_fang_enabled', 'on')
+             and is_state('binary_sensor.floor_heat_wan_ju_fang_sensor_valid', 'on')
+             and current <= (target - start_delta)
+             and predicted < (target - stop_margin) }}
+      - name: floor_heat_any_demand
+        unique_id: floor_heat_any_demand
+        state: >
+          {{ is_state('binary_sensor.floor_heat_zhu_wo_heat_demand', 'on')
+             or is_state('binary_sensor.floor_heat_er_tong_fang_heat_demand', 'on')
+             or is_state('binary_sensor.floor_heat_lao_ren_fang_heat_demand', 'on')
+             or is_state('binary_sensor.floor_heat_shu_fang_heat_demand', 'on')
+             or is_state('binary_sensor.floor_heat_can_ting_heat_demand', 'on')
+             or is_state('binary_sensor.floor_heat_qi_ju_shi_heat_demand', 'on')
+             or is_state('binary_sensor.floor_heat_da_ting_heat_demand', 'on')
+             or is_state('binary_sensor.floor_heat_wan_ju_fang_heat_demand', 'on') }}
+      - name: floor_heat_any_valve_on
+        unique_id: floor_heat_any_valve_on
+        state: >
+          {{ is_state('switch.yeelink_cn_358374474_sw1_on_p_3_1', 'on')
+             or is_state('switch.yeelink_cn_358374550_sw1_on_p_2_1', 'on')
+             or is_state('switch.yeelink_cn_358373839_sw1_on_p_3_1', 'on')
+             or is_state('switch.yeelink_cn_404920863_sw1_on_p_2_1', 'on')
+             or is_state('switch.yeelink_cn_404920863_sw1_on_p_3_1', 'on')
+             or is_state('switch.yeelink_cn_358374474_sw1_on_p_2_1', 'on')
+             or is_state('switch.yeelink_cn_358373839_sw1_on_p_2_1', 'on')
+             or is_state('switch.yeelink_cn_358374550_sw1_on_p_3_1', 'on') }}
+
+script:
+  floor_heat_evaluate_room:
+    alias: 地暖单房间评估
+    mode: parallel
+    fields:
+      enabled_entity:
+      sensor_valid_entity:
+      current_temperature_entity:
+      target_temperature_entity:
+      predicted_temperature_entity:
+      valve_entity:
+      last_switch_entity:
+    sequence:
+      - variables:
+          enabled: "{{ is_state(enabled_entity, 'on') }}"
+          sensor_valid: "{{ is_state(sensor_valid_entity, 'on') }}"
+          current_temp: "{{ states(current_temperature_entity) | float(0) }}"
+          target_temp: "{{ states(target_temperature_entity) | float(0) }}"
+          predicted_temp: "{{ states(predicted_temperature_entity) | float(0) }}"
+          valve_on: "{{ is_state(valve_entity, 'on') }}"
+          start_delta: "{{ states('input_number.floor_heat_start_delta') | float(0.35) }}"
+          stop_margin: "{{ states('input_number.floor_heat_stop_margin') | float(0.15) }}"
+          min_on_sec: "{{ (states('input_number.floor_heat_min_on_min') | float(20) * 60) | int }}"
+          min_off_sec: "{{ (states('input_number.floor_heat_min_off_min') | float(15) * 60) | int }}"
+          last_switch_ts: "{{ as_timestamp(states(last_switch_entity), default=0) }}"
+          elapsed_sec: "{{ (as_timestamp(now()) - as_timestamp(states(last_switch_entity), default=0)) | int(999999) }}"
+      - choose:
+          - conditions:
+              - condition: template
+                value_template: "{{ (not enabled or not sensor_valid) and valve_on }}"
+            sequence:
+              - action: homeassistant.turn_off
+                data:
+                  entity_id: "{{ valve_entity }}"
+              - action: input_datetime.set_datetime
+                data:
+                  entity_id: "{{ last_switch_entity }}"
+                  datetime: "{{ now().strftime('%Y-%m-%d %H:%M:%S') }}"
+          - conditions:
+              - condition: template
+                value_template: >
+                  {{ valve_on
+                     and elapsed_sec >= min_on_sec
+                     and (current_temp >= (target_temp - stop_margin) or predicted_temp >= target_temp) }}
+            sequence:
+              - action: homeassistant.turn_off
+                data:
+                  entity_id: "{{ valve_entity }}"
+              - action: input_datetime.set_datetime
+                data:
+                  entity_id: "{{ last_switch_entity }}"
+                  datetime: "{{ now().strftime('%Y-%m-%d %H:%M:%S') }}"
+          - conditions:
+              - condition: template
+                value_template: >
+                  {{ enabled
+                     and sensor_valid
+                     and (not valve_on)
+                     and elapsed_sec >= min_off_sec
+                     and current_temp <= (target_temp - start_delta)
+                     and predicted_temp < (target_temp - stop_margin) }}
+            sequence:
+              - action: homeassistant.turn_on
+                data:
+                  entity_id: "{{ valve_entity }}"
+              - action: input_datetime.set_datetime
+                data:
+                  entity_id: "{{ last_switch_entity }}"
+                  datetime: "{{ now().strftime('%Y-%m-%d %H:%M:%S') }}"
+
+automation:
+  - id: floor_heat_capture_10m_snapshots
+    alias: 地暖更新10分钟温度快照
+    trigger:
+      - trigger: time_pattern
+        minutes: "/10"
+    action:
+      - action: input_number.set_value
+        data:
+          entity_id: input_number.floor_heat_zhu_wo_temp_10m
+          value: "{{ states('sensor.lumi_cn_lumi_158d00041f4592_v1_temperature_p_2_1') | float(0) }}"
+      - action: input_number.set_value
+        data:
+          entity_id: input_number.floor_heat_er_tong_fang_temp_10m
+          value: "{{ states('sensor.lumi_cn_lumi_158d000406b1e1_v1_temperature_p_2_1') | float(0) }}"
+      - action: input_number.set_value
+        data:
+          entity_id: input_number.floor_heat_lao_ren_fang_temp_10m
+          value: "{{ states('sensor.lumi_cn_lumi_158d00044c0213_v1_temperature_p_2_1') | float(0) }}"
+      - action: input_number.set_value
+        data:
+          entity_id: input_number.floor_heat_shu_fang_temp_10m
+          value: "{{ states('sensor.lumi_cn_lumi_158d00044bc2eb_v1_temperature_p_2_1') | float(0) }}"
+      - action: input_number.set_value
+        data:
+          entity_id: input_number.floor_heat_can_ting_temp_10m
+          value: "{{ states('sensor.lumi_cn_lumi_158d00041e2f7c_v1_temperature_p_2_1') | float(0) }}"
+      - action: input_number.set_value
+        data:
+          entity_id: input_number.floor_heat_qi_ju_shi_temp_10m
+          value: "{{ states('sensor.lumi_cn_lumi_158d0003cd3c36_v1_temperature_p_2_1') | float(0) }}"
+      - action: input_number.set_value
+        data:
+          entity_id: input_number.floor_heat_da_ting_temp_10m
+          value: "{{ states('sensor.lumi_cn_lumi_158d0003cd3c41_v1_temperature_p_2_1') | float(0) }}"
+      - action: input_number.set_value
+        data:
+          entity_id: input_number.floor_heat_wan_ju_fang_temp_10m
+          value: "{{ states('sensor.lumi_cn_lumi_158d0002b96514_v1_temperature_p_2_1') | float(0) }}"
+  - id: floor_heat_capture_30m_snapshots
+    alias: 地暖更新30分钟温度快照
+    trigger:
+      - trigger: time_pattern
+        minutes: "/30"
+    action:
+      - action: input_number.set_value
+        data:
+          entity_id: input_number.floor_heat_zhu_wo_temp_30m
+          value: "{{ states('sensor.lumi_cn_lumi_158d00041f4592_v1_temperature_p_2_1') | float(0) }}"
+      - action: input_number.set_value
+        data:
+          entity_id: input_number.floor_heat_er_tong_fang_temp_30m
+          value: "{{ states('sensor.lumi_cn_lumi_158d000406b1e1_v1_temperature_p_2_1') | float(0) }}"
+      - action: input_number.set_value
+        data:
+          entity_id: input_number.floor_heat_lao_ren_fang_temp_30m
+          value: "{{ states('sensor.lumi_cn_lumi_158d00044c0213_v1_temperature_p_2_1') | float(0) }}"
+      - action: input_number.set_value
+        data:
+          entity_id: input_number.floor_heat_shu_fang_temp_30m
+          value: "{{ states('sensor.lumi_cn_lumi_158d00044bc2eb_v1_temperature_p_2_1') | float(0) }}"
+      - action: input_number.set_value
+        data:
+          entity_id: input_number.floor_heat_can_ting_temp_30m
+          value: "{{ states('sensor.lumi_cn_lumi_158d00041e2f7c_v1_temperature_p_2_1') | float(0) }}"
+      - action: input_number.set_value
+        data:
+          entity_id: input_number.floor_heat_qi_ju_shi_temp_30m
+          value: "{{ states('sensor.lumi_cn_lumi_158d0003cd3c36_v1_temperature_p_2_1') | float(0) }}"
+      - action: input_number.set_value
+        data:
+          entity_id: input_number.floor_heat_da_ting_temp_30m
+          value: "{{ states('sensor.lumi_cn_lumi_158d0003cd3c41_v1_temperature_p_2_1') | float(0) }}"
+      - action: input_number.set_value
+        data:
+          entity_id: input_number.floor_heat_wan_ju_fang_temp_30m
+          value: "{{ states('sensor.lumi_cn_lumi_158d0002b96514_v1_temperature_p_2_1') | float(0) }}"
+  - id: floor_heat_evaluate_rooms
+    alias: 地暖统一房间评估
+    trigger:
+      - trigger: time_pattern
+        minutes: "/5"
+      - trigger: state
+        entity_id:
+          - sensor.lumi_cn_lumi_158d00041f4592_v1_temperature_p_2_1
+          - sensor.lumi_cn_lumi_158d000406b1e1_v1_temperature_p_2_1
+          - sensor.lumi_cn_lumi_158d00044c0213_v1_temperature_p_2_1
+          - sensor.lumi_cn_lumi_158d00044bc2eb_v1_temperature_p_2_1
+          - sensor.lumi_cn_lumi_158d00041e2f7c_v1_temperature_p_2_1
+          - sensor.lumi_cn_lumi_158d0003cd3c36_v1_temperature_p_2_1
+          - sensor.lumi_cn_lumi_158d0003cd3c41_v1_temperature_p_2_1
+          - sensor.lumi_cn_lumi_158d0002b96514_v1_temperature_p_2_1
+          - input_number.floor_heat_zhu_wo_target_temp
+          - input_number.floor_heat_er_tong_fang_target_temp
+          - input_number.floor_heat_lao_ren_fang_target_temp
+          - input_number.floor_heat_shu_fang_target_temp
+          - input_number.floor_heat_can_ting_target_temp
+          - input_number.floor_heat_qi_ju_shi_target_temp
+          - input_number.floor_heat_da_ting_target_temp
+          - input_number.floor_heat_wan_ju_fang_target_temp
+          - input_boolean.floor_heat_zhu_wo_enabled
+          - input_boolean.floor_heat_er_tong_fang_enabled
+          - input_boolean.floor_heat_lao_ren_fang_enabled
+          - input_boolean.floor_heat_shu_fang_enabled
+          - input_boolean.floor_heat_can_ting_enabled
+          - input_boolean.floor_heat_qi_ju_shi_enabled
+          - input_boolean.floor_heat_da_ting_enabled
+          - input_boolean.floor_heat_wan_ju_fang_enabled
+          - binary_sensor.wei_neng_wai_zhi_beng
+          - switch.lumi_cn_lumi_158d0001a5d316_v1_on_p_2_1
+    action:
+      - action: script.floor_heat_evaluate_room
+        data:
+          enabled_entity: input_boolean.floor_heat_zhu_wo_enabled
+          sensor_valid_entity: binary_sensor.floor_heat_zhu_wo_sensor_valid
+          current_temperature_entity: sensor.lumi_cn_lumi_158d00041f4592_v1_temperature_p_2_1
+          target_temperature_entity: input_number.floor_heat_zhu_wo_target_temp
+          predicted_temperature_entity: sensor.floor_heat_zhu_wo_predicted_temp
+          valve_entity: switch.yeelink_cn_358374474_sw1_on_p_3_1
+          last_switch_entity: input_datetime.floor_heat_zhu_wo_last_switch_at
+      - action: script.floor_heat_evaluate_room
+        data:
+          enabled_entity: input_boolean.floor_heat_er_tong_fang_enabled
+          sensor_valid_entity: binary_sensor.floor_heat_er_tong_fang_sensor_valid
+          current_temperature_entity: sensor.lumi_cn_lumi_158d000406b1e1_v1_temperature_p_2_1
+          target_temperature_entity: input_number.floor_heat_er_tong_fang_target_temp
+          predicted_temperature_entity: sensor.floor_heat_er_tong_fang_predicted_temp
+          valve_entity: switch.yeelink_cn_358374550_sw1_on_p_2_1
+          last_switch_entity: input_datetime.floor_heat_er_tong_fang_last_switch_at
+      - action: script.floor_heat_evaluate_room
+        data:
+          enabled_entity: input_boolean.floor_heat_lao_ren_fang_enabled
+          sensor_valid_entity: binary_sensor.floor_heat_lao_ren_fang_sensor_valid
+          current_temperature_entity: sensor.lumi_cn_lumi_158d00044c0213_v1_temperature_p_2_1
+          target_temperature_entity: input_number.floor_heat_lao_ren_fang_target_temp
+          predicted_temperature_entity: sensor.floor_heat_lao_ren_fang_predicted_temp
+          valve_entity: switch.yeelink_cn_358373839_sw1_on_p_3_1
+          last_switch_entity: input_datetime.floor_heat_lao_ren_fang_last_switch_at
+      - action: script.floor_heat_evaluate_room
+        data:
+          enabled_entity: input_boolean.floor_heat_shu_fang_enabled
+          sensor_valid_entity: binary_sensor.floor_heat_shu_fang_sensor_valid
+          current_temperature_entity: sensor.lumi_cn_lumi_158d00044bc2eb_v1_temperature_p_2_1
+          target_temperature_entity: input_number.floor_heat_shu_fang_target_temp
+          predicted_temperature_entity: sensor.floor_heat_shu_fang_predicted_temp
+          valve_entity: switch.yeelink_cn_404920863_sw1_on_p_2_1
+          last_switch_entity: input_datetime.floor_heat_shu_fang_last_switch_at
+      - action: script.floor_heat_evaluate_room
+        data:
+          enabled_entity: input_boolean.floor_heat_can_ting_enabled
+          sensor_valid_entity: binary_sensor.floor_heat_can_ting_sensor_valid
+          current_temperature_entity: sensor.lumi_cn_lumi_158d00041e2f7c_v1_temperature_p_2_1
+          target_temperature_entity: input_number.floor_heat_can_ting_target_temp
+          predicted_temperature_entity: sensor.floor_heat_can_ting_predicted_temp
+          valve_entity: switch.yeelink_cn_404920863_sw1_on_p_3_1
+          last_switch_entity: input_datetime.floor_heat_can_ting_last_switch_at
+      - action: script.floor_heat_evaluate_room
+        data:
+          enabled_entity: input_boolean.floor_heat_qi_ju_shi_enabled
+          sensor_valid_entity: binary_sensor.floor_heat_qi_ju_shi_sensor_valid
+          current_temperature_entity: sensor.lumi_cn_lumi_158d0003cd3c36_v1_temperature_p_2_1
+          target_temperature_entity: input_number.floor_heat_qi_ju_shi_target_temp
+          predicted_temperature_entity: sensor.floor_heat_qi_ju_shi_predicted_temp
+          valve_entity: switch.yeelink_cn_358374474_sw1_on_p_2_1
+          last_switch_entity: input_datetime.floor_heat_qi_ju_shi_last_switch_at
+      - action: script.floor_heat_evaluate_room
+        data:
+          enabled_entity: input_boolean.floor_heat_da_ting_enabled
+          sensor_valid_entity: binary_sensor.floor_heat_da_ting_sensor_valid
+          current_temperature_entity: sensor.lumi_cn_lumi_158d0003cd3c41_v1_temperature_p_2_1
+          target_temperature_entity: input_number.floor_heat_da_ting_target_temp
+          predicted_temperature_entity: sensor.floor_heat_da_ting_predicted_temp
+          valve_entity: switch.yeelink_cn_358373839_sw1_on_p_2_1
+          last_switch_entity: input_datetime.floor_heat_da_ting_last_switch_at
+      - action: script.floor_heat_evaluate_room
+        data:
+          enabled_entity: input_boolean.floor_heat_wan_ju_fang_enabled
+          sensor_valid_entity: binary_sensor.floor_heat_wan_ju_fang_sensor_valid
+          current_temperature_entity: sensor.lumi_cn_lumi_158d0002b96514_v1_temperature_p_2_1
+          target_temperature_entity: input_number.floor_heat_wan_ju_fang_target_temp
+          predicted_temperature_entity: sensor.floor_heat_wan_ju_fang_predicted_temp
+          valve_entity: switch.yeelink_cn_358374550_sw1_on_p_3_1
+          last_switch_entity: input_datetime.floor_heat_wan_ju_fang_last_switch_at
+  - id: floor_heat_set_preset_targets
+    alias: 地暖预设温度同步
+    trigger:
+      - trigger: state
+        entity_id:
+          - input_select.floor_heat_zhu_wo_preset
+          - input_select.floor_heat_er_tong_fang_preset
+          - input_select.floor_heat_lao_ren_fang_preset
+          - input_select.floor_heat_shu_fang_preset
+          - input_select.floor_heat_can_ting_preset
+          - input_select.floor_heat_qi_ju_shi_preset
+          - input_select.floor_heat_da_ting_preset
+          - input_select.floor_heat_wan_ju_fang_preset
+    action:
+      - variables:
+          preset_target: >
+            {% set mapping = {'away': 18, 'comfort': 23, 'home': 22, 'sleep': 21} %}
+            {{ mapping.get(trigger.to_state.state) }}
+          target_entity: >
+            {% set entity = trigger.entity_id %}
+            {% if entity == 'input_select.floor_heat_zhu_wo_preset' %}input_number.floor_heat_zhu_wo_target_temp
+            {% elif entity == 'input_select.floor_heat_er_tong_fang_preset' %}input_number.floor_heat_er_tong_fang_target_temp
+            {% elif entity == 'input_select.floor_heat_lao_ren_fang_preset' %}input_number.floor_heat_lao_ren_fang_target_temp
+            {% elif entity == 'input_select.floor_heat_shu_fang_preset' %}input_number.floor_heat_shu_fang_target_temp
+            {% elif entity == 'input_select.floor_heat_can_ting_preset' %}input_number.floor_heat_can_ting_target_temp
+            {% elif entity == 'input_select.floor_heat_qi_ju_shi_preset' %}input_number.floor_heat_qi_ju_shi_target_temp
+            {% elif entity == 'input_select.floor_heat_da_ting_preset' %}input_number.floor_heat_da_ting_target_temp
+            {% else %}input_number.floor_heat_wan_ju_fang_target_temp{% endif %}
+      - if:
+          - condition: template
+            value_template: "{{ preset_target is not none }}"
+        then:
+          - action: input_number.set_value
+            data:
+              entity_id: "{{ target_entity }}"
+              value: "{{ preset_target }}"
+  - id: floor_heat_boiler_start
+    alias: 地暖锅炉启动
+    trigger:
+      - trigger: state
+        entity_id: binary_sensor.floor_heat_any_demand
+        to: "on"
+        for:
+          seconds: 180
+    action:
+      - if:
+          - condition: state
+            entity_id: climate.vaillant_plus_g9c9oxe7o9x7rp6h67ocnc_climate
+            state: "off"
+        then:
+          - action: climate.set_hvac_mode
+            target:
+              entity_id: climate.vaillant_plus_g9c9oxe7o9x7rp6h67ocnc_climate
+            data:
+              hvac_mode: heat
+  - id: floor_heat_boiler_stop
+    alias: 地暖锅炉停止
+    trigger:
+      - trigger: state
+        entity_id: binary_sensor.floor_heat_any_demand
+        to: "off"
+        for:
+          minutes: 8
+    action:
+      - if:
+          - condition: not
+            conditions:
+              - condition: state
+                entity_id: climate.vaillant_plus_g9c9oxe7o9x7rp6h67ocnc_climate
+                state: "off"
+        then:
+          - action: climate.set_hvac_mode
+            target:
+              entity_id: climate.vaillant_plus_g9c9oxe7o9x7rp6h67ocnc_climate
+            data:
+              hvac_mode: off
+  - id: floor_heat_pump_start
+    alias: 地暖循环泵启动
+    trigger:
+      - trigger: state
+        entity_id:
+          - binary_sensor.floor_heat_any_valve_on
+          - binary_sensor.wei_neng_wai_zhi_beng
+    action:
+      - if:
+          - condition: state
+            entity_id: binary_sensor.floor_heat_any_valve_on
+            state: "on"
+          - condition: state
+            entity_id: binary_sensor.wei_neng_wai_zhi_beng
+            state: "on"
+        then:
+          - action: homeassistant.turn_on
+            data:
+              entity_id: switch.lumi_cn_lumi_158d0001a5d316_v1_on_p_2_1
+  - id: floor_heat_pump_stop
+    alias: 地暖循环泵停止
+    trigger:
+      - trigger: state
+        entity_id: binary_sensor.floor_heat_any_valve_on
+        to: "off"
+        for:
+          minutes: 12
+      - trigger: state
+        entity_id: binary_sensor.wei_neng_wai_zhi_beng
+        to: "off"
+        for:
+          minutes: 12
+    condition:
+      - condition: state
+        entity_id: binary_sensor.floor_heat_any_valve_on
+        state: "off"
+      - condition: state
+        entity_id: binary_sensor.wei_neng_wai_zhi_beng
+        state: "off"
+    action:
+      - action: homeassistant.turn_off
+        data:
+          entity_id: switch.lumi_cn_lumi_158d0001a5d316_v1_on_p_2_1
