@@ -963,6 +963,18 @@ script:
           - conditions:
               - condition: template
                 value_template: >
+                  {{ valve_on and current_temp >= target_temp }}
+            sequence:
+              - action: homeassistant.turn_off
+                data:
+                  entity_id: "{{ valve_entity }}"
+              - action: input_datetime.set_datetime
+                data:
+                  entity_id: "{{ last_switch_entity }}"
+                  datetime: "{{ now().strftime('%Y-%m-%d %H:%M:%S') }}"
+          - conditions:
+              - condition: template
+                value_template: >
                   {{ valve_on
                      and elapsed_sec >= min_on_sec
                      and (current_temp >= (target_temp - stop_margin) or predicted_temp >= target_temp) }}
@@ -1278,7 +1290,19 @@ automation:
         entity_id: binary_sensor.floor_heat_any_demand
         to: "off"
         for:
-          minutes: 8
+          seconds: 30
+      - trigger: state
+        entity_id: binary_sensor.floor_heat_any_valve_on
+        to: "off"
+        for:
+          seconds: 30
+    condition:
+      - condition: state
+        entity_id: binary_sensor.floor_heat_any_demand
+        state: "off"
+      - condition: state
+        entity_id: binary_sensor.floor_heat_any_valve_on
+        state: "off"
     action:
       - if:
           - condition: not
@@ -1291,7 +1315,7 @@ automation:
             target:
               entity_id: climate.vaillant_plus_g9c9oxe7o9x7rp6h67ocnc_climate
             data:
-              hvac_mode: off
+              hvac_mode: "off"
   - id: floor_heat_pump_start
     alias: 地暖循环泵启动
     trigger:
@@ -1317,20 +1341,9 @@ automation:
       - trigger: state
         entity_id: binary_sensor.floor_heat_any_valve_on
         to: "off"
-        for:
-          minutes: 12
       - trigger: state
         entity_id: binary_sensor.wei_neng_wai_zhi_beng
         to: "off"
-        for:
-          minutes: 12
-    condition:
-      - condition: state
-        entity_id: binary_sensor.floor_heat_any_valve_on
-        state: "off"
-      - condition: state
-        entity_id: binary_sensor.wei_neng_wai_zhi_beng
-        state: "off"
     action:
       - action: homeassistant.turn_off
         data:
