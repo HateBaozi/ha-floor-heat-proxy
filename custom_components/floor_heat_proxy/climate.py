@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-import logging
 from collections.abc import Mapping
 from typing import Any
 
@@ -10,18 +9,16 @@ import voluptuous as vol
 
 from homeassistant.components.climate import PLATFORM_SCHEMA, ClimateEntity
 from homeassistant.components.climate.const import (
-    ATTR_TEMPERATURE,
     ClimateEntityFeature,
     HVACAction,
     HVACMode,
 )
-from homeassistant.const import ATTR_ENTITY_ID, CONF_NAME, CONF_UNIQUE_ID, STATE_ON, STATE_UNAVAILABLE, STATE_UNKNOWN
+from homeassistant.const import ATTR_ENTITY_ID, ATTR_TEMPERATURE, CONF_NAME, CONF_UNIQUE_ID, STATE_ON, STATE_UNAVAILABLE, STATE_UNKNOWN
 from homeassistant.core import HomeAssistant, callback
 from homeassistant.helpers import config_validation as cv
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.helpers.event import async_track_state_change_event
 from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
-from homeassistant.util import slugify
 
 from .const import (
     CONF_ENABLED_ENTITY,
@@ -40,8 +37,6 @@ from .const import (
     DEFAULT_TARGET_TEMP_STEP,
     PRESET_MODES,
 )
-
-_LOGGER = logging.getLogger(__name__)
 
 PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend(
     {
@@ -172,6 +167,7 @@ class FloorHeatProxyClimate(ClimateEntity):
 
     async def async_added_to_hass(self) -> None:
         """Register listeners after entity is added."""
+        await super().async_added_to_hass()
         entity_ids = [
             self._temperature_sensor,
             self._target_temperature_entity,
@@ -190,6 +186,7 @@ class FloorHeatProxyClimate(ClimateEntity):
                 self._handle_dependency_change,
             )
         )
+        self.async_write_ha_state()
 
     @callback
     def _handle_dependency_change(self, event) -> None:

@@ -829,14 +829,6 @@ script:
   floor_heat_evaluate_room:
     alias: 地暖单房间评估
     mode: parallel
-    fields:
-      enabled_entity:
-      sensor_valid_entity:
-      current_temperature_entity:
-      target_temperature_entity:
-      predicted_temperature_entity:
-      valve_entity:
-      last_switch_entity:
     sequence:
       - variables:
           enabled: "{{ is_state(enabled_entity, 'on') }}"
@@ -849,7 +841,6 @@ script:
           stop_margin: "{{ states('input_number.floor_heat_stop_margin') | float(0.15) }}"
           min_on_sec: "{{ (states('input_number.floor_heat_min_on_min') | float(20) * 60) | int }}"
           min_off_sec: "{{ (states('input_number.floor_heat_min_off_min') | float(15) * 60) | int }}"
-          last_switch_ts: "{{ as_timestamp(states(last_switch_entity), default=0) }}"
           elapsed_sec: "{{ (as_timestamp(now()) - as_timestamp(states(last_switch_entity), default=0)) | int(999999) }}"
       - choose:
           - conditions:
@@ -896,6 +887,23 @@ script:
                   datetime: "{{ now().strftime('%Y-%m-%d %H:%M:%S') }}"
 
 automation:
+  - id: floor_heat_seed_snapshots_on_start
+    alias: 地暖启动后初始化温度快照
+    trigger:
+      - trigger: homeassistant
+        event: start
+    action:
+      - action: automation.trigger
+        target:
+          entity_id: automation.floor_heat_capture_10m_snapshots
+        data:
+          skip_condition: true
+      - action: automation.trigger
+        target:
+          entity_id: automation.floor_heat_capture_30m_snapshots
+        data:
+          skip_condition: true
+
   - id: floor_heat_capture_10m_snapshots
     alias: 地暖更新10分钟温度快照
     trigger:
@@ -1006,7 +1014,7 @@ automation:
           - binary_sensor.wei_neng_wai_zhi_beng
           - switch.lumi_cn_lumi_158d0001a5d316_v1_on_p_2_1
     action:
-      - action: script.floor_heat_evaluate_room
+      - action: script.di_nuan_dan_fang_jian_ping_gu
         data:
           enabled_entity: input_boolean.floor_heat_zhu_wo_enabled
           sensor_valid_entity: binary_sensor.floor_heat_zhu_wo_sensor_valid
@@ -1015,7 +1023,7 @@ automation:
           predicted_temperature_entity: sensor.floor_heat_zhu_wo_predicted_temp
           valve_entity: switch.yeelink_cn_358374474_sw1_on_p_3_1
           last_switch_entity: input_datetime.floor_heat_zhu_wo_last_switch_at
-      - action: script.floor_heat_evaluate_room
+      - action: script.di_nuan_dan_fang_jian_ping_gu
         data:
           enabled_entity: input_boolean.floor_heat_er_tong_fang_enabled
           sensor_valid_entity: binary_sensor.floor_heat_er_tong_fang_sensor_valid
@@ -1024,7 +1032,7 @@ automation:
           predicted_temperature_entity: sensor.floor_heat_er_tong_fang_predicted_temp
           valve_entity: switch.yeelink_cn_358374550_sw1_on_p_2_1
           last_switch_entity: input_datetime.floor_heat_er_tong_fang_last_switch_at
-      - action: script.floor_heat_evaluate_room
+      - action: script.di_nuan_dan_fang_jian_ping_gu
         data:
           enabled_entity: input_boolean.floor_heat_lao_ren_fang_enabled
           sensor_valid_entity: binary_sensor.floor_heat_lao_ren_fang_sensor_valid
@@ -1033,7 +1041,7 @@ automation:
           predicted_temperature_entity: sensor.floor_heat_lao_ren_fang_predicted_temp
           valve_entity: switch.yeelink_cn_358373839_sw1_on_p_3_1
           last_switch_entity: input_datetime.floor_heat_lao_ren_fang_last_switch_at
-      - action: script.floor_heat_evaluate_room
+      - action: script.di_nuan_dan_fang_jian_ping_gu
         data:
           enabled_entity: input_boolean.floor_heat_shu_fang_enabled
           sensor_valid_entity: binary_sensor.floor_heat_shu_fang_sensor_valid
@@ -1042,7 +1050,7 @@ automation:
           predicted_temperature_entity: sensor.floor_heat_shu_fang_predicted_temp
           valve_entity: switch.yeelink_cn_404920863_sw1_on_p_2_1
           last_switch_entity: input_datetime.floor_heat_shu_fang_last_switch_at
-      - action: script.floor_heat_evaluate_room
+      - action: script.di_nuan_dan_fang_jian_ping_gu
         data:
           enabled_entity: input_boolean.floor_heat_can_ting_enabled
           sensor_valid_entity: binary_sensor.floor_heat_can_ting_sensor_valid
@@ -1051,7 +1059,7 @@ automation:
           predicted_temperature_entity: sensor.floor_heat_can_ting_predicted_temp
           valve_entity: switch.yeelink_cn_404920863_sw1_on_p_3_1
           last_switch_entity: input_datetime.floor_heat_can_ting_last_switch_at
-      - action: script.floor_heat_evaluate_room
+      - action: script.di_nuan_dan_fang_jian_ping_gu
         data:
           enabled_entity: input_boolean.floor_heat_qi_ju_shi_enabled
           sensor_valid_entity: binary_sensor.floor_heat_qi_ju_shi_sensor_valid
@@ -1060,7 +1068,7 @@ automation:
           predicted_temperature_entity: sensor.floor_heat_qi_ju_shi_predicted_temp
           valve_entity: switch.yeelink_cn_358374474_sw1_on_p_2_1
           last_switch_entity: input_datetime.floor_heat_qi_ju_shi_last_switch_at
-      - action: script.floor_heat_evaluate_room
+      - action: script.di_nuan_dan_fang_jian_ping_gu
         data:
           enabled_entity: input_boolean.floor_heat_da_ting_enabled
           sensor_valid_entity: binary_sensor.floor_heat_da_ting_sensor_valid
@@ -1069,7 +1077,7 @@ automation:
           predicted_temperature_entity: sensor.floor_heat_da_ting_predicted_temp
           valve_entity: switch.yeelink_cn_358373839_sw1_on_p_2_1
           last_switch_entity: input_datetime.floor_heat_da_ting_last_switch_at
-      - action: script.floor_heat_evaluate_room
+      - action: script.di_nuan_dan_fang_jian_ping_gu
         data:
           enabled_entity: input_boolean.floor_heat_wan_ju_fang_enabled
           sensor_valid_entity: binary_sensor.floor_heat_wan_ju_fang_sensor_valid
